@@ -92,7 +92,6 @@ public:
 			end = p_data_item;
 		}
 		++size;
-
 		return(p_data_item);
 	}
 
@@ -115,20 +114,6 @@ public:
 		}
 
 		return ret;
-	}
-
-	tdata& atIndex(unsigned int index) const
-	{
-		//bool ret = false;
-		unsigned int i = 0;
-		p2List_item<tdata>* p_data = start;
-
-		for (unsigned int i = 0; i < index && p_data != NULL; ++i)
-			p_data = p_data->next;
-
-		
-
-		return p_data;
 	}
 
 	/**
@@ -213,7 +198,7 @@ public:
 	}
 
 
-	/*
+	/**
 	* returns the first apperance of data as index (-1 if not found)
 	*/
 	p2List_item<tdata>* findNode(const tdata& data)

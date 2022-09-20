@@ -1,15 +1,14 @@
-#include "Application.h"
+
 #include "Globals.h"
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include "Primitive.h"
 #include "glut/glut.h"
-#include "ModulePlayer.h"
 
 #pragma comment (lib, "glut/glut32.lib")
 
 // ------------------------------------------------------------
-Primitive::Primitive() : transform(IdentityMatrix), color(White), wire(false), axis(false), body(nullptr), type(PrimitiveTypes::Primitive_Point)
+Primitive::Primitive() : transform(IdentityMatrix), color(White), wire(false), axis(false), type(PrimitiveTypes::Primitive_Point)
 {}
 
 // ------------------------------------------------------------
@@ -18,14 +17,18 @@ PrimitiveTypes Primitive::GetType() const
 	return type;
 }
 
+void Primitive::Update()
+{
+	//TODO 5: Set the primitive position and rotation to the PhysBody position and rotation
+}
+
 // ------------------------------------------------------------
 void Primitive::Render() const
 {
-
 	glPushMatrix();
 	glMultMatrixf(transform.M);
 
-	if (axis == true)
+	if(axis == true)
 	{
 		// Draw Axis Grid
 		glLineWidth(2.0f);
@@ -59,7 +62,7 @@ void Primitive::Render() const
 
 	glColor3f(color.r, color.g, color.b);
 
-	if (wire)
+	if(wire)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	else
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -87,21 +90,21 @@ void Primitive::InnerRender() const
 void Primitive::SetPos(float x, float y, float z)
 {
 	transform.translate(x, y, z);
-	body.SetTransform(&transform);
+	//TODO 6: Set the body position to the new position too!
 }
 
 // ------------------------------------------------------------
 void Primitive::SetRotation(float angle, const vec3 &u)
 {
 	transform.rotate(angle, u);
-	body.SetTransform(&transform);
+	//TODO 6: Set the body rotation to the new rotation too!
 }
 
 // ------------------------------------------------------------
 void Primitive::Scale(float x, float y, float z)
 {
 	transform.scale(x, y, z);
-	body.SetTransform(&transform);
+	//TODO 6: Set the body scale to the new scale too!
 }
 
 // CUBE ============================================
@@ -113,18 +116,6 @@ Cube::Cube() : Primitive(), size(1.0f, 1.0f, 1.0f)
 Cube::Cube(float sizeX, float sizeY, float sizeZ) : Primitive(), size(sizeX, sizeY, sizeZ)
 {
 	type = PrimitiveTypes::Primitive_Cube;
-	//body.SetBodyCube(this, 1); //This is the error
-}
-
-Cube::Cube(const vec3& _size, float mass) : Primitive(), size(_size)
-{
-	type = PrimitiveTypes::Primitive_Cube;
-	//body.SetBodyCube(this, mass);
-}
-
-vec3 Cube::GetSize() const
-{
-	return size;
 }
 
 void Cube::InnerRender() const
@@ -175,14 +166,11 @@ void Cube::InnerRender() const
 }
 
 // SPHERE ============================================
-Sphere::Sphere() : Primitive(), radius(1.0f)
-{
-	type = PrimitiveTypes::Primitive_Sphere;
-}
 
-Sphere::Sphere(float radius) : Primitive(), radius(radius)
+Sphere::Sphere(float _radius, float mass) : Primitive(), radius(_radius)
 {
 	type = PrimitiveTypes::Primitive_Sphere;
+	//TODO 4: Initialize the PhysBody to be a Sphere
 }
 
 void Sphere::InnerRender() const
