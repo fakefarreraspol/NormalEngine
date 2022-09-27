@@ -28,11 +28,10 @@ bool ModuleSceneIntro::CleanUp()
 {
 	LOG("Unloading Intro scene");
 
-	for (int n = 0; n < primitives.Count(); n++)
+	for (int n = 0; n < primitives.size(); n++)
 	{
-		delete primitives[n];
+		primitives.clear();
 	}
-	primitives.Clear();
 
 	return true;
 }
@@ -56,9 +55,9 @@ update_status ModuleSceneIntro::Update(float dt)
 
 
 	//TODO 3: Nothing to do here. But it's good to know where all primitives are being updated
-	for (uint n = 0; n < primitives.Count(); n++)
+	for (uint n = 0; n < primitives.size(); n++)
 	{
-		primitives[n]->Update();
+		primitives.begin();
 	}
 
 	return UPDATE_CONTINUE;
@@ -67,9 +66,9 @@ update_status ModuleSceneIntro::Update(float dt)
 update_status ModuleSceneIntro::PostUpdate(float dt)
 {
 	//TODO 3: Nothing to do here. But it's good to know where all primitives are being rendered
-	for (uint n = 0; n < primitives.Count(); n++)
+	for (uint n = 0; n < primitives.size(); n++)
 	{
-		primitives[n]->Render();
+		primitives.rend();
 	}
 
 	return UPDATE_CONTINUE;

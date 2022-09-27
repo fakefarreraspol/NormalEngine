@@ -1,6 +1,7 @@
 #pragma once
 
-class  PhysBody3D;
+class Application;
+struct PhysBody3D;
 
 class Module
 {

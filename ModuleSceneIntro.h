@@ -1,10 +1,13 @@
 #pragma once
 #include "Module.h"
-#include "p2DynArray.h"
 #include "Globals.h"
+#include <iostream>
+#include <list>
 
 class Primitive;
 class  PhysBody3D;
+
+using namespace std;
 
 class ModuleSceneIntro : public Module
 {
@@ -20,5 +23,5 @@ public:
 	//TODO 9: Create an "OnCollision" method specific for this module
 
 private:
-	p2DynArray<Primitive*> primitives;
+	list<Primitive*> primitives;
 };

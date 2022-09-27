@@ -81,15 +81,6 @@
     <ClInclude Include="Light.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="p2DynArray.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="p2List.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="p2Point.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Primitive.h">
       <Filter>Core</Filter>
     </ClInclude>
