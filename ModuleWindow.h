@@ -2,7 +2,7 @@
 #define __ModuleWindow_H__
 
 #include "Module.h"
-#include "SDL/include/SDL.h"
+#include "external/SDL/include/SDL.h"
 
 class Application;
 
@@ -20,7 +20,7 @@ public:
 
 	void SetTitle(const char* title);
 
-	SDL_Window* GetWindow()
+	SDL_Window* GetSDLWindow()
 	{
 		return window;
 	}
