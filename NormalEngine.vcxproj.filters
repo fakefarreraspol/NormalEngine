@@ -1,48 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="ModuleAudio.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleCamera3D.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleInput.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleRenderer3D.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleSceneIntro.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleWindow.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="Application.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Color.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="glmath.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Light.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="log.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Primitive.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="external\imgui\imgui_impl_sdl.cpp">
       <Filter>Modules\imgui</Filter>
     </ClCompile>
@@ -70,50 +28,50 @@
     <ClCompile Include="external\imgui\imgui_impl_opengl3.cpp">
       <Filter>Modules\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="src\ModuleInput.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModuleRenderer3D.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModuleSceneIntro.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModuleWindow.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModuleAudio.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModuleCamera3D.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Light.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\log.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Color.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\glmath.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Timer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Primitive.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Module.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleAudio.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleCamera3D.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleInput.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleRenderer3D.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleSceneIntro.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleWindow.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Application.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="glmath.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Globals.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Light.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Primitive.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="external\imgui\imgui_impl_sdl.h">
       <Filter>Modules\imgui</Filter>
     </ClInclude>
@@ -146,6 +104,48 @@
     </ClInclude>
     <ClInclude Include="external\imgui\imgui_impl_opengl3_loader.h">
       <Filter>Modules\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModuleInput.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModuleRenderer3D.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModuleSceneIntro.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModuleWindow.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Module.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModuleAudio.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModuleCamera3D.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Globals.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Light.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Color.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\glmath.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Timer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Primitive.h">
+      <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

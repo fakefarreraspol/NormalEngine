@@ -50,14 +50,14 @@
       <SDLCheck>false</SDLCheck>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(ProjectDir)external\SDL\include;$(ProjectDir)external\glew\include\GL;$(ProjectDir)external\math\src;$(ProjectDir)external\imgui;$(ProjectDir)external\math\src\Algorithm;$(ProjectDir)external\math\src\Algorithm\Random;$(ProjectDir)external\math\src\emscripten;$(ProjectDir)external\math\src\Geometry;$(ProjectDir)external\math\src\Math;$(ProjectDir)external\math\src\Time;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)external\SDL_mixer\include;$(ProjectDir)external\SDL\include;$(ProjectDir)external\glew\include\GL;$(ProjectDir)external\math\src;$(ProjectDir)external\imgui;$(ProjectDir)external\math\src\Algorithm;$(ProjectDir)external\math\src\Algorithm\Random;$(ProjectDir)external\math\src\emscripten;$(ProjectDir)external\math\src\Geometry;$(ProjectDir)external\math\src\Math;$(ProjectDir)external\math\src\Time;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <AdditionalLibraryDirectories>$(ProjectDir)external\glew\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);opengl32.lib;glu32.lib;glew32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)external\glew\lib\Release\Win32;$(ProjectDir)external\SDL\libx86;$(ProjectDir)external\SDL_mixer\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);opengl32.lib;glu32.lib;glew32.lib;SDL2.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,8 +79,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="Color.h" />
     <ClInclude Include="external\imgui\imconfig.h" />
     <ClInclude Include="external\imgui\imgui.h" />
     <ClInclude Include="external\imgui\imgui_impl_opengl3.h" />
@@ -92,22 +90,22 @@
     <ClInclude Include="external\imgui\imstb_rectpack.h" />
     <ClInclude Include="external\imgui\imstb_textedit.h" />
     <ClInclude Include="external\imgui\imstb_truetype.h" />
-    <ClInclude Include="glmath.h" />
-    <ClInclude Include="Globals.h" />
-    <ClInclude Include="Light.h" />
-    <ClInclude Include="ModuleCamera3D.h" />
-    <ClInclude Include="ModuleRenderer3D.h" />
-    <ClInclude Include="Module.h" />
-    <ClInclude Include="ModuleAudio.h" />
-    <ClInclude Include="ModuleInput.h" />
-    <ClInclude Include="ModuleSceneIntro.h" />
-    <ClInclude Include="ModuleWindow.h" />
-    <ClInclude Include="Primitive.h" />
-    <ClInclude Include="Timer.h" />
+    <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\Color.h" />
+    <ClInclude Include="src\glmath.h" />
+    <ClInclude Include="src\Globals.h" />
+    <ClInclude Include="src\Light.h" />
+    <ClInclude Include="src\Module.h" />
+    <ClInclude Include="src\ModuleAudio.h" />
+    <ClInclude Include="src\ModuleCamera3D.h" />
+    <ClInclude Include="src\ModuleInput.h" />
+    <ClInclude Include="src\ModuleRenderer3D.h" />
+    <ClInclude Include="src\ModuleSceneIntro.h" />
+    <ClInclude Include="src\ModuleWindow.h" />
+    <ClInclude Include="src\Primitive.h" />
+    <ClInclude Include="src\Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Color.cpp" />
     <ClCompile Include="external\imgui\imgui.cpp" />
     <ClCompile Include="external\imgui\imgui_demo.cpp" />
     <ClCompile Include="external\imgui\imgui_draw.cpp" />
@@ -117,18 +115,20 @@
     <ClCompile Include="external\imgui\imgui_stdlib.cpp" />
     <ClCompile Include="external\imgui\imgui_tables.cpp" />
     <ClCompile Include="external\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="glmath.cpp" />
-    <ClCompile Include="Light.cpp" />
-    <ClCompile Include="log.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="ModuleAudio.cpp" />
-    <ClCompile Include="ModuleCamera3D.cpp" />
-    <ClCompile Include="ModuleInput.cpp" />
-    <ClCompile Include="ModuleRenderer3D.cpp" />
-    <ClCompile Include="ModuleSceneIntro.cpp" />
-    <ClCompile Include="ModuleWindow.cpp" />
-    <ClCompile Include="Primitive.cpp" />
-    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Color.cpp" />
+    <ClCompile Include="src\glmath.cpp" />
+    <ClCompile Include="src\Light.cpp" />
+    <ClCompile Include="src\log.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\ModuleAudio.cpp" />
+    <ClCompile Include="src\ModuleCamera3D.cpp" />
+    <ClCompile Include="src\ModuleInput.cpp" />
+    <ClCompile Include="src\ModuleRenderer3D.cpp" />
+    <ClCompile Include="src\ModuleSceneIntro.cpp" />
+    <ClCompile Include="src\ModuleWindow.cpp" />
+    <ClCompile Include="src\Primitive.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
