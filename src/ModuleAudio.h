@@ -8,10 +8,10 @@
 
 using namespace std;
 
+
 class ModuleAudio : public Module
 {
 public:
-
 	ModuleAudio(bool start_enabled = true);
 	~ModuleAudio();
 
@@ -28,7 +28,6 @@ public:
 	bool PlayFx(unsigned int fx, int repeat = 0);
 
 private:
-
 	Mix_Music*			music;
 	list<Mix_Chunk*>	fx;
 };

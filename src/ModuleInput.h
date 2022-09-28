@@ -4,6 +4,7 @@
 
 #define MAX_MOUSE_BUTTONS 5
 
+
 enum KEY_STATE
 {
 	KEY_IDLE = 0,
@@ -15,7 +16,6 @@ enum KEY_STATE
 class ModuleInput : public Module
 {
 public:
-	
 	ModuleInput(bool start_enabled = true);
 	~ModuleInput();
 

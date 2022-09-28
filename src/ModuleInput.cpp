@@ -4,6 +4,7 @@
 
 #define MAX_KEYS 300
 
+
 ModuleInput::ModuleInput(bool start_enabled) : Module(start_enabled)
 {
 	keyboard = new KEY_STATE[MAX_KEYS];

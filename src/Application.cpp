@@ -1,5 +1,6 @@
 #include "Application.h"
 
+
 Application::Application() : debug(false)
 {
 	window = new ModuleWindow();
@@ -9,7 +10,6 @@ Application::Application() : debug(false)
 	renderer3D = new ModuleRenderer3D();
 	camera = new ModuleCamera3D();
 	
-
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order
 	// They will CleanUp() in reverse order
@@ -19,7 +19,6 @@ Application::Application() : debug(false)
 	AddModule(camera);
 	AddModule(input);
 	AddModule(audio);
-	
 	
 	// Scenes
 	AddModule(scene_intro);

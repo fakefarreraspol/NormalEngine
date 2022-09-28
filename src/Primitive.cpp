@@ -1,10 +1,10 @@
-
 #include "Globals.h"
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include "Primitive.h"
 
 //dd#pragma comment (lib, "glut/glut32.lib")
+
 
 // ------------------------------------------------------------
 Primitive::Primitive() : transform(IdentityMatrix), color(White), wire(false), axis(false), type(PrimitiveTypes::Primitive_Point)
@@ -176,7 +176,6 @@ void Sphere::InnerRender() const
 {
 	//glutSolidSphere(radius, 25, 25);
 }
-
 
 // CYLINDER ============================================
 Cylinder::Cylinder() : Primitive(), radius(1.0f), height(1.0f)

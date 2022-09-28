@@ -53,7 +53,6 @@ update_status ModuleSceneIntro::Update(float dt)
 		}
 	}
 
-
 	//TODO 3: Nothing to do here. But it's good to know where all primitives are being updated
 	for (uint n = 0; n < primitives.size(); n++)
 	{

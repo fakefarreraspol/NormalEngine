@@ -4,12 +4,12 @@
 #include "Module.h"
 #include "SDL.h"
 
+
 class Application;
 
 class ModuleWindow : public Module
 {
 public:
-
 	ModuleWindow(bool start_enabled = true);
 
 	// Destructor
@@ -24,7 +24,6 @@ public:
 	{
 		return window;
 	}
-
 
 public:
 	//The window we'll be rendering to

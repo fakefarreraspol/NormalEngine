@@ -1,4 +1,3 @@
-
 #pragma once
 #include "glmath.h"
 #include "Color.h"
@@ -26,7 +25,6 @@ public:
 	void			Scale(float x, float y, float z);
 	PrimitiveTypes	GetType() const;
 
-
 	Color color;
 	mat4x4 transform;
 	bool axis,wire;
@@ -46,6 +44,7 @@ public :
 
 protected:
 	void InnerRender() const;
+
 public:
 	vec3 size;
 };
@@ -58,6 +57,7 @@ public:
 
 protected:
 	void InnerRender() const;
+
 public:
 	float radius;
 };
@@ -71,6 +71,7 @@ public:
 
 protected:
 	void InnerRender() const;
+
 public:
 	float radius;
 	float height;
@@ -85,6 +86,7 @@ public:
 
 protected:
 	void InnerRender() const;
+
 public:
 	vec3 origin;
 	vec3 destination;
@@ -99,6 +101,7 @@ public:
 
 protected:
 	void InnerRender() const;
+
 public:
 	vec3 normal;
 	float constant;
