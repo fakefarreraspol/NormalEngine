@@ -43,35 +43,32 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="GuiWindow.cpp">
+    <ClCompile Include="external\imgui\imgui_impl_sdl.cpp">
       <Filter>Modules\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="external\imgui\imgui_impl_sdl.cpp">
-      <Filter>Modules\imgui\imgui</Filter>
-    </ClCompile>
     <ClCompile Include="external\imgui\imgui_impl_sdlrenderer.cpp">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClCompile>
     <ClCompile Include="external\imgui\imgui_stdlib.cpp">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClCompile>
     <ClCompile Include="external\imgui\imgui_tables.cpp">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClCompile>
     <ClCompile Include="external\imgui\imgui_widgets.cpp">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClCompile>
     <ClCompile Include="external\imgui\imgui.cpp">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClCompile>
     <ClCompile Include="external\imgui\imgui_demo.cpp">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClCompile>
     <ClCompile Include="external\imgui\imgui_draw.cpp">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClCompile>
     <ClCompile Include="external\imgui\imgui_impl_opengl3.cpp">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -117,41 +114,38 @@
     <ClInclude Include="Timer.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="GuiWindow.h">
+    <ClInclude Include="external\imgui\imgui_impl_sdl.h">
       <Filter>Modules\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="external\imgui\imgui_impl_sdl.h">
-      <Filter>Modules\imgui\imgui</Filter>
-    </ClInclude>
     <ClInclude Include="external\imgui\imgui_impl_sdlrenderer.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
     <ClInclude Include="external\imgui\imgui_internal.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
     <ClInclude Include="external\imgui\imgui_stdlib.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
     <ClInclude Include="external\imgui\imstb_rectpack.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
     <ClInclude Include="external\imgui\imstb_textedit.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
     <ClInclude Include="external\imgui\imstb_truetype.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
     <ClInclude Include="external\imgui\imconfig.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
     <ClInclude Include="external\imgui\imgui.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
     <ClInclude Include="external\imgui\imgui_impl_opengl3.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
     <ClInclude Include="external\imgui\imgui_impl_opengl3_loader.h">
-      <Filter>Modules\imgui\imgui</Filter>
+      <Filter>Modules\imgui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -162,9 +156,6 @@
       <UniqueIdentifier>{a37b5a9b-4755-4581-8c22-125ea3cde636}</UniqueIdentifier>
     </Filter>
     <Filter Include="Modules\imgui">
-      <UniqueIdentifier>{baefc24e-49de-483a-9a85-3e8709e8de26}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Modules\imgui\imgui">
       <UniqueIdentifier>{d3a39a6b-87ee-4ef9-8d6f-ebfa9a865b62}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
