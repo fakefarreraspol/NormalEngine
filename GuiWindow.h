@@ -5,11 +5,9 @@
 #include "Globals.h"
 
 
-
 class GuiWindow:public Module
 {
 public:
-
 	GuiWindow(){}
 	~GuiWindow(){}
 
@@ -23,19 +21,6 @@ public:
 
 private:
 
-
-
-
 };
-
-
-
-
-
-
-
-
-
-
 
 #endif // __GuiWindow_H_
