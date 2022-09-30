@@ -6,7 +6,7 @@
 #include "imgui_impl_sdl.h"
 
 
-ModuleWindow::ModuleWindow(bool start_enabled) : Module(start_enabled)
+ModuleWindow::ModuleWindow(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
 	window = NULL;
 	screen_surface = NULL;

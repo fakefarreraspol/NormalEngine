@@ -103,6 +103,7 @@
     <ClInclude Include="src\ModuleSceneIntro.h" />
     <ClInclude Include="src\ModuleWindow.h" />
     <ClInclude Include="src\Primitive.h" />
+    <ClInclude Include="src\PTimer.h" />
     <ClInclude Include="src\Timer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +129,7 @@
     <ClCompile Include="src\ModuleSceneIntro.cpp" />
     <ClCompile Include="src\ModuleWindow.cpp" />
     <ClCompile Include="src\Primitive.cpp" />
+    <ClCompile Include="src\PTimer.cpp" />
     <ClCompile Include="src\Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

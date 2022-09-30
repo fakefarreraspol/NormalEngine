@@ -70,6 +70,9 @@
     <ClCompile Include="src\ModuleWindow.cpp">
       <Filter>Modules\Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="src\PTimer.cpp">
+      <Filter>Core\Cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\imgui\imgui_impl_sdl.h">
@@ -146,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="src\ModuleWindow.h">
       <Filter>Modules\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PTimer.h">
+      <Filter>Core\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,9 +2,12 @@
 #include "Application.h"
 #include "ModuleSceneIntro.h"
 #include "Primitive.h"
+#include "imgui.h"
+#include "imgui_impl_opengl3.h"
+#include "imgui_impl_sdl.h"
 
 
-ModuleSceneIntro::ModuleSceneIntro(bool start_enabled) : Module(start_enabled)
+ModuleSceneIntro::ModuleSceneIntro(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
 }
 
@@ -19,6 +22,13 @@ bool ModuleSceneIntro::Start()
 
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
+
+	IMGUI_CHECKVERSION();
+	void* context = ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+
+	// Setup Dear ImGui style
+	ImGui::StyleColorsDark();
 
 	return ret;
 }
@@ -59,6 +69,64 @@ update_status ModuleSceneIntro::Update(float dt)
 		primitives.begin();
 	}
 
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplSDL2_NewFrame(App->window->window);
+    ImGui::NewFrame();
+
+
+    //ImGui::Begin("Custom window",0, ImGuiWindowFlags_MenuBar);
+
+    ImGui::ShowDemoWindow();
+
+    if (ImGui::BeginMainMenuBar())
+    {
+        if (ImGui::BeginMenu("File"))
+        {
+            if (ImGui::Button("Close"))
+            {
+                return UPDATE_STOP;
+            }
+            ImGui::EndMenu();
+        }
+        if (ImGui::BeginMenu("Edit"))
+        {
+            if (ImGui::MenuItem("Undo", "CTRL+Z")) {}
+            if (ImGui::MenuItem("Redo", "CTRL+Y", false, false)) {}  // Disabled item
+            ImGui::Separator();
+            if (ImGui::MenuItem("Cut", "CTRL+X")) {}
+            if (ImGui::MenuItem("Copy", "CTRL+C")) {}
+            if (ImGui::MenuItem("Paste", "CTRL+V")) {}
+            ImGui::EndMenu();
+        }
+        if (ImGui::BeginMenu("Help"))
+        {
+            if (ImGui::Button("About"))
+            {
+                activateAbout = !activateAbout;
+
+            }
+
+            ImGui::EndMenu();
+        }
+        ImGui::EndMainMenuBar();
+    }
+
+
+
+    if (activateAbout == true)
+    {
+        ImGui::Begin("About", 0, ImGuiWindowFlags_MenuBar);
+        {
+            ImGui::Text("BrumBrum");
+            ImGui::Text("Best Motor ever not of a car");
+            ImGui::Text("Abochan & Juan Fernando (https://github.com/AlCh440/EngineBrumBrum)");
+            ImGui::Text("We have the Mathegeolib, the glew, the JSON and the SDL");
+            ImGui::Text("License");
+        }
+
+        ImGui::End();
+    }
+
 	return UPDATE_CONTINUE;
 }
 
@@ -73,4 +141,6 @@ update_status ModuleSceneIntro::PostUpdate(float dt)
 	return UPDATE_CONTINUE;
 }
 
-//TODO 9: And change the color of the colliding bodies, so we can visualize it working!
+void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
+{
+}
