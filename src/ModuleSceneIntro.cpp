@@ -111,8 +111,6 @@ update_status ModuleSceneIntro::Update(float dt)
         ImGui::EndMainMenuBar();
     }
 
-
-
     if (activateAbout == true)
     {
         ImGui::Begin("About", 0, ImGuiWindowFlags_MenuBar);
@@ -123,7 +121,6 @@ update_status ModuleSceneIntro::Update(float dt)
             ImGui::Text("We have the Mathegeolib, the glew, the JSON and the SDL");
             ImGui::Text("License");
         }
-
         ImGui::End();
     }
 

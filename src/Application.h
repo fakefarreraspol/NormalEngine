@@ -1,5 +1,3 @@
-#pragma once
-
 #include <iostream>
 #include <list>
 #include "Globals.h"
@@ -8,10 +6,10 @@
 #include "ModuleWindow.h"
 #include "ModuleInput.h"
 #include "ModuleAudio.h"
-#include "ModuleSceneIntro.h"
 #include "ModuleRenderer3D.h"
 #include "ModuleCamera3D.h"
 #include "PTimer.h"
+#include "ModuleSceneIntro.h"
 
 using namespace std;
 

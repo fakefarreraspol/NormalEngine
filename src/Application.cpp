@@ -6,10 +6,10 @@ Application::Application() : debug(false)
 	window = new ModuleWindow(this);
 	input = new ModuleInput(this);
 	audio = new ModuleAudio(this, true);
-	scene_intro = new ModuleSceneIntro(this);
 	renderer3D = new ModuleRenderer3D(this);
 	camera = new ModuleCamera3D(this);
-	
+	scene_intro = new ModuleSceneIntro(this);
+
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order
 	// They will CleanUp() in reverse order
@@ -41,8 +41,6 @@ Application::~Application()
 bool Application::Init()
 {
 	bool ret = true;
-
-	App = this;
 
 	// Call Init() in all modules
 	list<Module*>::iterator item = list_modules.begin();
@@ -157,5 +155,3 @@ void Application::AddModule(Module* mod)
 {
 	list_modules.push_back(mod);
 }
-
-Application* App = nullptr;
