@@ -1,10 +1,10 @@
 #ifndef __PERFTIMER_H__
 #define __PERFTIMER_H__
 
+
 class PTimer
 {
 public:
-
 	// Constructor
 	PTimer();
 

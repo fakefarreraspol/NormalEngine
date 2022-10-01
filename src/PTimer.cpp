@@ -3,6 +3,7 @@
 
 float PTimer::frequency = 0;
 
+
 // L07: DONE 2: Fill Constructor, Start(),ReadMs() and ReadTicks() methods
 // they are simple, one line each!
 

@@ -78,7 +78,6 @@ void Application::PrepareUpdate()
 // ---------------------------------------------
 void Application::FinishUpdate()
 {
-
 	float secondsSinceStartup = startupTime.Read();
 
 	if (lastSecFrameTime.Read() > 1000) {
@@ -97,7 +96,6 @@ void Application::FinishUpdate()
 	PTimer* delayt = new PTimer();
 	delayt->Start();
 	if (maxFrameRate > 0 && delay > 0) SDL_Delay(delay);
-
 
 	window->SetTitle(title);
 }
