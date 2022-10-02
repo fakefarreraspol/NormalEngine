@@ -1,5 +1,5 @@
 #include "PTimer.h"
-#include "\Users\Carlos Arnau\source\repos\NormalEngine\external\SDL\include\SDL_timer.h"
+#include "SDL_timer.h"
 
 float PTimer::frequency = 0;
 
