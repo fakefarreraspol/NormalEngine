@@ -73,7 +73,6 @@ update_status ModuleSceneIntro::Update(float dt)
     ImGui_ImplSDL2_NewFrame(App->window->window);
     ImGui::NewFrame();
 
-
     //ImGui::Begin("Custom window",0, ImGuiWindowFlags_MenuBar);
 
     ImGui::ShowDemoWindow();
@@ -115,9 +114,9 @@ update_status ModuleSceneIntro::Update(float dt)
     {
         ImGui::Begin("About", 0, ImGuiWindowFlags_MenuBar);
         {
-            ImGui::Text("BrumBrum");
-            ImGui::Text("Best Motor ever not of a car");
-            ImGui::Text("Abochan & Juan Fernando (https://github.com/AlCh440/EngineBrumBrum)");
+            ImGui::Text("Normal Engine");
+            ImGui::Text("vg motor");
+            ImGui::Text("Pol and Carlos (https://github.com/fakefarreraspol/NormalEngine)");
             ImGui::Text("We have the Mathegeolib, the glew, the JSON and the SDL");
             ImGui::Text("License");
         }
