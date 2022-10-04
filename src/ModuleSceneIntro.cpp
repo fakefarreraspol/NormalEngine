@@ -3,14 +3,11 @@
 #include "ModuleSceneIntro.h"
 #include "Primitive.h"
 #include "SDL_opengl.h"
-#include <gl/GL.h>
-#include <gl/GLU.h>
 
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"
 #include "imgui_impl_sdl.h"
 
-#pragma comment (lib, "glu32.lib")    /* link OpenGL Utility lib     */
 #pragma comment (lib, "opengl32.lib") /* link Microsoft OpenGL lib   */
 
 ModuleSceneIntro::ModuleSceneIntro(Application* app, bool start_enabled) : Module(app, start_enabled)
