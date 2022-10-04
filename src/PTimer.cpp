@@ -21,7 +21,7 @@ void PTimer::Start()
 
 double PTimer::ReadMs() const
 {
-	return 1000.0 * (double(SDL_GetPerformanceCounter() - startTime) / double(frequency));
+	return 5.0 * (double(SDL_GetPerformanceCounter() - startTime) / double(frequency));
 }
 
 float PTimer::ReadTicks() const
