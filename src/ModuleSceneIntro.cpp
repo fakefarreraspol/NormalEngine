@@ -7,11 +7,12 @@
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"
 #include "imgui_impl_sdl.h"
+
 #include "cimport.h"
 #include "scene.h"
 #include "postprocess.h"
 
-#pragma comment (lib, "assimp.lib")
+#pragma comment (lib, "assimp-vc142-mt.lib")
 #pragma comment (lib, "opengl32.lib") /* link Microsoft OpenGL lib   */
 
 
