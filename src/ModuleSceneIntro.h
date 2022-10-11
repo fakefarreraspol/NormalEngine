@@ -28,6 +28,8 @@ public:
 
 	void OnCollision(PhysBody3D* body1, PhysBody3D* body2);
 
+	SDL_Window* window;
+
 	// Buttons
 	bool myToolActive = true;
 	bool myTryActive = true;

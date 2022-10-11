@@ -1,6 +1,8 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleSceneIntro.h"
+#include "ModuleWindow.h"
+#include "ModuleRenderer3D.h"
 #include "Primitive.h"
 #include "SDL_opengl.h"
 
@@ -190,6 +192,7 @@ update_status ModuleSceneIntro::Update(float dt)
         {
             if (ImGui::BeginMenu("Window"))
             {
+                
                 ImGui::Checkbox("Full Screen", &fullscreen);
                 {
 
@@ -220,13 +223,18 @@ update_status ModuleSceneIntro::Update(float dt)
 
             if (ImGui::BeginMenu("Input"))
             {
+                ImGui::EndMenu();
+            }
+
+            if (ImGui::BeginMenu("Style"))
+            {
+                ImGui::ShowStyleEditor();
 
                 ImGui::EndMenu();
             }
 
             if (ImGui::BeginMenu("Audio"))
             {
-
                 static auto i = 100;
                 ImGui::SliderInt("Volume", &i, 0, 100);
 
