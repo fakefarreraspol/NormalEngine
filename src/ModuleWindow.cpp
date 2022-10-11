@@ -1,6 +1,7 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleWindow.h"
+#include "ModuleRenderer3D.h"
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"
 #include "imgui_impl_sdl.h"
@@ -118,6 +119,23 @@ bool ModuleWindow::CleanUp()
 	//Quit SDL subsystems
 	SDL_Quit();
 	return true;
+}
+
+void ModuleWindow::FullscreenSet(bool fullscreen)
+{
+	SDL_SetWindowFullscreen(window, fullscreen);
+	SDL_SetWindowSize(window, 1920, 1080);
+}
+
+void ModuleWindow::FullscreenNoSet(bool fullscreenno)
+{
+	SDL_SetWindowFullscreen(window, fullscreenno);
+	SDL_SetWindowSize(window, 1080, 720);
+}
+
+void ModuleWindow::Vsync(bool vsync)
+{
+
 }
 
 void ModuleWindow::SetTitle(const char* title)

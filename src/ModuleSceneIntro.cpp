@@ -62,6 +62,7 @@ update_status ModuleSceneIntro::Update(float dt)
 	p.axis = true;
 	p.Render();
 
+    /*
     // Render a color-cube consisting of 6 quads with different colors
     glBegin(GL_QUADS);                // Begin drawing the color cube with 6 quads
        // Top face (y = 1.0f)
@@ -107,6 +108,7 @@ update_status ModuleSceneIntro::Update(float dt)
     glVertex3f(1.0f, 0.0f, 1.0f);
     glVertex3f(1.0f, 0.0f, -1.0f);
     glEnd();  // End of drawing color-cube
+    */
 
 	if (App->debug == true)
 	{
@@ -136,12 +138,22 @@ update_status ModuleSceneIntro::Update(float dt)
     {
         if (ImGui::BeginMenu("File"))
         {
+            if (ImGui::MenuItem("New Scene", "CTRL+N")) {}
+            if (ImGui::MenuItem("Open Scene", "CTRL+O")) {}
+            ImGui::Separator();
+            if (ImGui::MenuItem("Save", "CTRL+S")) {}
+            if (ImGui::MenuItem("Save As", "CTRL+Shift+S")) {}
+            ImGui::Separator();
+            if (ImGui::MenuItem("New Project")) {}
+            if (ImGui::MenuItem("Open Project")) {}
+            ImGui::Separator();
             if (ImGui::Button("Close"))
             {
                 return UPDATE_STOP;
             }
             ImGui::EndMenu();
         }
+
         if (ImGui::BeginMenu("Edit"))
         {
             if (ImGui::MenuItem("Undo", "CTRL+Z")) {}
@@ -150,18 +162,80 @@ update_status ModuleSceneIntro::Update(float dt)
             if (ImGui::MenuItem("Cut", "CTRL+X")) {}
             if (ImGui::MenuItem("Copy", "CTRL+C")) {}
             if (ImGui::MenuItem("Paste", "CTRL+V")) {}
+            ImGui::Separator();
+            if (ImGui::MenuItem("Select All", "CTRL+A")) {}
+            if (ImGui::MenuItem("Deselect All", "Shift+D")) {}
+            if (ImGui::MenuItem("Select Children", "CTRL+C")) {}
+            if (ImGui::MenuItem("Invert Selection", "CTRL+I")) {}
+            ImGui::Separator();
+            if (ImGui::MenuItem("Duplicate", "CTRL+D")) {}
+            if (ImGui::MenuItem("Rename")) {}
+            if (ImGui::MenuItem("Delete")) {}
+            ImGui::Separator();
+            if (ImGui::MenuItem("Play", "CTRL+P")) {}
+            if (ImGui::MenuItem("Pause", "CTRL+Shift+P")) {}
             ImGui::EndMenu();
         }
+
         if (ImGui::BeginMenu("Help"))
         {
             if (ImGui::Button("About"))
             {
                 activateAbout = !activateAbout;
+            }
+            ImGui::EndMenu();
+        }
 
+        if (ImGui::BeginMenu("Configuration"))
+        {
+            if (ImGui::BeginMenu("Window"))
+            {
+                ImGui::Checkbox("Full Screen", &fullscreen);
+                {
+
+                    if (fullscreen == true)
+                    {
+                        fullscreenno = true;
+                        App->window->FullscreenSet(fullscreen);
+
+                    }
+
+                    if (fullscreen == false)
+                    {
+                        fullscreenno = false;
+                        App->window->FullscreenNoSet(fullscreenno);
+                    }
+
+                }
+
+                ImGui::Checkbox("Wireframe", &boolWireframe);
+
+                ImGui::Checkbox("Vsync", &vsync);
+                {
+
+                }
+
+                ImGui::EndMenu();
+            }
+
+            if (ImGui::BeginMenu("Input"))
+            {
+
+                ImGui::EndMenu();
+            }
+
+            if (ImGui::BeginMenu("Audio"))
+            {
+
+                static auto i = 100;
+                ImGui::SliderInt("Volume", &i, 0, 100);
+
+                ImGui::EndMenu();
             }
 
             ImGui::EndMenu();
         }
+
         ImGui::EndMainMenuBar();
     }
 

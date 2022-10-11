@@ -28,10 +28,24 @@ public:
 
 	void OnCollision(PhysBody3D* body1, PhysBody3D* body2);
 
+	// Buttons
 	bool myToolActive = true;
 	bool myTryActive = true;
 	bool closeButton = false;
 	bool activateAbout = false;
+
+	// Screen
+	bool fullscreen = false;
+	bool fullscreenno = false;
+	bool vsync = false;
+	bool boolWireframe = false;
+
+	// Textures
+	bool activateDepthTest = false;
+	bool activateCullFace = false;
+	bool activateLightning = false;
+	bool activateColorMaterial = false;
+	bool activateTexture2D = false;
 
 private:
 	list<Primitive*> primitives;

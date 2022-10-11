@@ -20,6 +20,9 @@ public:
 	bool CleanUp();
 
 	void SetTitle(const char* title);
+	void FullscreenSet(bool fullscreen);
+	void FullscreenNoSet(bool fullscreenno);
+	void Vsync(bool fullscreenno);
 
 	SDL_Window* GetSDLWindow()
 	{
