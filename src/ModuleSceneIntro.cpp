@@ -194,7 +194,6 @@ update_status ModuleSceneIntro::Update(float dt)
             {
                 ImGui::Checkbox("Full Screen", &fullscreen);
                 {
-
                     if (fullscreen == true)
                     {
                         fullscreenno = true;
