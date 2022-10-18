@@ -192,11 +192,6 @@ update_status ModuleSceneIntro::Update(float dt)
         {
             if (ImGui::BeginMenu("Window"))
             {
-                static auto h = 1080;
-                static auto w = 720;
-                ImGui::SliderInt("Volume", &h, 0, 1920);
-                ImGui::SliderInt("dfsdf", &w, 0, 1080);
-
                 ImGui::Checkbox("Full Screen", &fullscreen);
                 {
 
