@@ -206,7 +206,6 @@ update_status ModuleSceneIntro::Update(float dt)
                         fullscreenno = false;
                         App->window->FullscreenNoSet(fullscreenno);
                     }
-
                 }
 
                 ImGui::Checkbox("Wireframe", &boolWireframe);

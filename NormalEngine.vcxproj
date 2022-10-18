@@ -79,6 +79,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="external\glew\include\GL\eglew.h" />
+    <ClInclude Include="external\glew\include\GL\glew.h" />
+    <ClInclude Include="external\glew\include\GL\glxew.h" />
+    <ClInclude Include="external\glew\include\GL\wglew.h" />
     <ClInclude Include="external\imgui\imconfig.h" />
     <ClInclude Include="external\imgui\imgui.h" />
     <ClInclude Include="external\imgui\imgui_impl_opengl3.h" />
