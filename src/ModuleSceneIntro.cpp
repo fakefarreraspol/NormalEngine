@@ -14,6 +14,8 @@
 #include "scene.h"
 #include "postprocess.h"
 
+#include <vector> // Vector 
+
 #pragma comment (lib, "assimp-vc142-mt.lib")
 #pragma comment (lib, "opengl32.lib") /* link Microsoft OpenGL lib   */
 
@@ -192,7 +194,7 @@ update_status ModuleSceneIntro::Update(float dt)
         {
             if (ImGui::BeginMenu("Window"))
             {
-                ImGui::Checkbox("Full Screen", &fullscreen);
+                ImGui::Checkbox("Fullscreen", &fullscreen);
                 {
                     if (fullscreen == true)
                     {
@@ -208,6 +210,12 @@ update_status ModuleSceneIntro::Update(float dt)
                     }
                 }
 
+                ImGui::SameLine();
+                if (ImGui::Checkbox("Resizable", &fullscreen))
+                    App->window->FullscreenSet(fullscreen);
+                if (ImGui::IsItemHovered())
+                    ImGui::SetTooltip("Restart to apply");
+
                 ImGui::Checkbox("Wireframe", &boolWireframe);
 
                 ImGui::Checkbox("Vsync", &vsync);
@@ -218,8 +226,51 @@ update_status ModuleSceneIntro::Update(float dt)
                 ImGui::EndMenu();
             }
 
+            if (ImGui::BeginMenu("Application"))
+            {
+                /*
+                vector<float> fps_log;
+                vector<float> ms_log;
+                char title[25];
+                sprintf_s(title, 25, "Framerate %.1f", fps_log[fps_log.size() - 1]);
+                ImGui::PlotHistogram("##framerate", &fps_log[0], fps_log.size(), 0, title, 0.0f, 100.0f, ImVec2(310, 100));
+                sprintf_s(title, 25, "Milliseconds %0.1f", ms_log[ms_log.size() - 1]);
+                ImGui::PlotHistogram("##milliseconds", &ms_log[0], ms_log.size(), 0, title, 0.0f, 100.0f, ImVec2(310, 100));
+                */
+
+                ImGui::EndMenu();
+            }
+
             if (ImGui::BeginMenu("Input"))
             {
+                ImGuiIO& io = ImGui::GetIO();
+                if (ImGui::TreeNode("Mouse Data"))
+                {
+                    if (ImGui::IsMousePosValid())
+                        ImGui::Text("Mouse pos: (%g, %g)", io.MousePos.x, io.MousePos.y);
+                    else
+                        ImGui::Text("Mouse pos: <INVALID>");
+                    ImGui::Text("Mouse delta: (%g, %g)", io.MouseDelta.x, io.MouseDelta.y);
+
+                    int count = IM_ARRAYSIZE(io.MouseDown);
+                    ImGui::Text("Mouse down:");         for (int i = 0; i < count; i++) if (ImGui::IsMouseDown(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 0.4f, 0.4f, 1.0f),"b%d (%.02f secs)", i, io.MouseDownDuration[i]); }
+                    ImGui::Text("Mouse clicked:");      for (int i = 0; i < count; i++) if (ImGui::IsMouseClicked(i)) { ImGui::SameLine(); ImGui::Text("b%d (%d)", i, ImGui::GetMouseClickedCount(i)); }
+                    ImGui::Text("Mouse released:");     for (int i = 0; i < count; i++) if (ImGui::IsMouseReleased(i)) { ImGui::SameLine(); ImGui::Text("b%d", i); }
+                    ImGui::Text("Mouse wheel: %.1f", io.MouseWheel);
+                    ImGui::Text("Pen Pressure: %.1f", io.PenPressure); // Note: currently unused
+                    ImGui::TreePop();
+
+                    char txt_green[] = "text green";
+                    char txt_def[] = "text default";
+                    // Particular widget styling
+                    ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(0, 255, 0, 255));
+                    ImGui::InputText("##text1", txt_green, sizeof(txt_green));
+                    ImGui::PopStyleColor();
+                    
+                        // Use global style colors
+                        ImGui::InputText("##text2", txt_def, sizeof(txt_def));
+                }
+
                 ImGui::EndMenu();
             }
 
