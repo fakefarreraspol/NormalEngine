@@ -69,6 +69,7 @@
       <SDLCheck>false</SDLCheck>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)NormalEngine\assimp;$(SolutionDir)NormalEngine\SDL\include;$(SolutionDir)NormalEngine\SDL_mixer\include;$(SolutionDir)NormalEngine\glew\include\GL;$(SolutionDir)NormalEngine\math\src;$(SolutionDir)NormalEngine\imgui;$(SolutionDir)NormalEngine\math\src\Algorithm;$(SolutionDir)NormalEngine\math\src\Algorithm\Random;$(SolutionDir)NormalEngine\math\src\emscripten;$(SolutionDir)NormalEngine\math\src\Geometry;$(SolutionDir)NormalEngine\math\src\Math;$(SolutionDir)NormalEngine\math\src\Time;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -76,6 +77,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalLibraryDirectories>$(SolutionDir)NormalEngine\assimp\libx86;$(SolutionDir)NormalEngine\SDL\libx86;$(SolutionDir)NormalEngine\glew\lib\Release\Win32;$(SolutionDir)NormalEngine\SDL_mixer\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);opengl32.lib;glu32.lib;glew32.lib;SDL2.lib;assimp-vc142-mt.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
