@@ -254,21 +254,11 @@ update_status ModuleSceneIntro::Update(float dt)
 
                     int count = IM_ARRAYSIZE(io.MouseDown);
                     ImGui::Text("Mouse down:");         for (int i = 0; i < count; i++) if (ImGui::IsMouseDown(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 0.4f, 0.4f, 1.0f),"b%d (%.02f secs)", i, io.MouseDownDuration[i]); }
-                    ImGui::Text("Mouse clicked:");      for (int i = 0; i < count; i++) if (ImGui::IsMouseClicked(i)) { ImGui::SameLine(); ImGui::Text("b%d (%d)", i, ImGui::GetMouseClickedCount(i)); }
-                    ImGui::Text("Mouse released:");     for (int i = 0; i < count; i++) if (ImGui::IsMouseReleased(i)) { ImGui::SameLine(); ImGui::Text("b%d", i); }
+                    ImGui::Text("Mouse clicked:");      for (int i = 0; i < count; i++) if (ImGui::IsMouseClicked(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 0.4f, 0.4f, 1.0f), "b%d (%d)", i, ImGui::GetMouseClickedCount(i)); }
+                    ImGui::Text("Mouse released:");     for (int i = 0; i < count; i++) if (ImGui::IsMouseReleased(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 0.4f, 0.4f, 1.0f), "b%d", i); }
                     ImGui::Text("Mouse wheel: %.1f", io.MouseWheel);
                     ImGui::Text("Pen Pressure: %.1f", io.PenPressure); // Note: currently unused
                     ImGui::TreePop();
-
-                    char txt_green[] = "text green";
-                    char txt_def[] = "text default";
-                    // Particular widget styling
-                    ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(0, 255, 0, 255));
-                    ImGui::InputText("##text1", txt_green, sizeof(txt_green));
-                    ImGui::PopStyleColor();
-                    
-                        // Use global style colors
-                        ImGui::InputText("##text2", txt_def, sizeof(txt_def));
                 }
 
                 ImGui::EndMenu();
@@ -299,11 +289,49 @@ update_status ModuleSceneIntro::Update(float dt)
     {
         ImGui::Begin("About", 0, ImGuiWindowFlags_MenuBar);
         {
-            ImGui::Text("Normal Engine");
-            ImGui::Text("vg motor");
+            ImGui::Text("Normal Engine v0.1");
+            ImGui::Text("The next generation Game Engine");
             ImGui::Text("Pol and Carlos (https://github.com/fakefarreraspol/NormalEngine)");
-            ImGui::Text("We have the Mathegeolib, the glew, the JSON and the SDL");
-            ImGui::Text("License");
+
+            ImGui::Text("");
+            ImGui::Separator();
+            ImGui::Text("");
+
+            ImGui::Text("3rd Party Libraries used:");
+            ImGui::Text("- SDL 2.0.6");
+            ImGui::Text("- SDL Mixer 2.0.0");
+            ImGui::Text("- Glew 2.0.0");
+            ImGui::Text("- ImGui 1.51");
+            ImGui::Text("- MathGeoLib 1.5");
+            ImGui::Text("- OpenGL 3.1");
+            ImGui::Text("- Assimp 3.1.1");
+
+            ImGui::Text("");
+            ImGui::Separator();
+            ImGui::Text("");
+
+            ImGui::Text("License:");
+            ImGui::Text("MIT License");
+            ImGui::Text("Copyright (c) 2022 fakefarreraspol & carlosarnau");
+
+            ImGui::Text("Permission is hereby granted, free of charge, to any person obtaining a copy");
+            ImGui::Text("of this software and associated documentation files(the 'Software'), to deal");
+            ImGui::Text("in the Software without restriction, including without limitation the rights");
+            ImGui::Text("to use, copy, modify, merge, publish, distribute, sublicense, and /or sell");
+            ImGui::Text("copies of the Software, and to permit persons to whom the Software is");
+            ImGui::Text("furnished to do so, subject to the following conditions:");
+
+            ImGui::Text("The above copyright notice and this permission notice shall be included in all");
+            ImGui::Text("copies or substantial portions of the Software.");
+
+            ImGui::Text("THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR");
+            ImGui::Text("IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,");
+            ImGui::Text("FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE");
+            ImGui::Text("AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER");
+            ImGui::Text("LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,");
+            ImGui::Text("OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE");
+            ImGui::Text("SOFTWARE.");
+
         }
         ImGui::End();
     }
