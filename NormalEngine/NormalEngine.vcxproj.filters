@@ -73,6 +73,9 @@
     <ClCompile Include="Main.cpp">
       <Filter>Core\Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="SaveAndLoad.cpp">
+      <Filter>Modules\Cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -164,6 +167,9 @@
     </ClInclude>
     <ClInclude Include="Light.h">
       <Filter>Core\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveAndLoad.h">
+      <Filter>Modules\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

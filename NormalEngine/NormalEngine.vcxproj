@@ -50,7 +50,7 @@
       <SDLCheck>false</SDLCheck>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(SolutionDir)NormalEngine\assimp;$(SolutionDir)NormalEngine\SDL_mixer\include;$(SolutionDir)NormalEngine\SDL\include;$(SolutionDir)NormalEngine\glew\include\GL;$(SolutionDir)NormalEngine\math\src;$(SolutionDir)NormalEngine\imgui;$(SolutionDir)NormalEngine\math\src\Algorithm;$(SolutionDir)NormalEngine\math\src\Algorithm\Random;$(SolutionDir)NormalEngine\math\src\emscripten;$(SolutionDir)NormalEngine\math\src\Geometry;$(SolutionDir)NormalEngine\math\src\Math;$(SolutionDir)NormalEngine\math\src\Time;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)NormalEngine\assimp;$(SolutionDir)NormalEngine\SDL_mixer\include;$(SolutionDir)NormalEngine\SDL\include;$(SolutionDir)NormalEngine\glew\include\GL;$(SolutionDir)NormalEngine\math\src;$(SolutionDir)NormalEngine\imgui;$(SolutionDir)NormalEngine\math\src\Algorithm;$(SolutionDir)NormalEngine\math\src\Algorithm\Random;$(SolutionDir)NormalEngine\math\src\emscripten;$(SolutionDir)NormalEngine\math\src\Geometry;$(SolutionDir)NormalEngine\math\src\Math;$(SolutionDir)NormalEngine\math\src\Time;$(SolutionDir)NormalEngine\parson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -69,7 +69,7 @@
       <SDLCheck>false</SDLCheck>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(SolutionDir)NormalEngine\assimp;$(SolutionDir)NormalEngine\SDL\include;$(SolutionDir)NormalEngine\SDL_mixer\include;$(SolutionDir)NormalEngine\glew\include\GL;$(SolutionDir)NormalEngine\math\src;$(SolutionDir)NormalEngine\imgui;$(SolutionDir)NormalEngine\math\src\Algorithm;$(SolutionDir)NormalEngine\math\src\Algorithm\Random;$(SolutionDir)NormalEngine\math\src\emscripten;$(SolutionDir)NormalEngine\math\src\Geometry;$(SolutionDir)NormalEngine\math\src\Math;$(SolutionDir)NormalEngine\math\src\Time;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)NormalEngine\assimp;$(SolutionDir)NormalEngine\SDL\include;$(SolutionDir)NormalEngine\SDL_mixer\include;$(SolutionDir)NormalEngine\glew\include\GL;$(SolutionDir)NormalEngine\math\src;$(SolutionDir)NormalEngine\imgui;$(SolutionDir)NormalEngine\math\src\Algorithm;$(SolutionDir)NormalEngine\math\src\Algorithm\Random;$(SolutionDir)NormalEngine\math\src\emscripten;$(SolutionDir)NormalEngine\math\src\Geometry;$(SolutionDir)NormalEngine\math\src\Math;$(SolutionDir)NormalEngine\math\src\Time;$(SolutionDir)NormalEngine\parson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -111,6 +111,7 @@
     <ClInclude Include="ModuleWindow.h" />
     <ClInclude Include="Primitive.h" />
     <ClInclude Include="PTimer.h" />
+    <ClInclude Include="SaveAndLoad.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,7 @@
     <ClCompile Include="ModuleWindow.cpp" />
     <ClCompile Include="Primitive.cpp" />
     <ClCompile Include="PTimer.cpp" />
+    <ClCompile Include="SaveAndLoad.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

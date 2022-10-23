@@ -10,7 +10,7 @@
 #include "ModuleCamera3D.h"
 #include "PTimer.h"
 #include "ModuleSceneIntro.h"
-
+#include "SaveAndLoad.h"
 using namespace std;
 
 
@@ -23,7 +23,8 @@ public:
 	ModuleSceneIntro* scene_intro;
 	ModuleRenderer3D* renderer3D;
 	ModuleCamera3D* camera;
-	
+	//SaveAndLoad* save_load;
+
 	bool debug;
 
 private:
