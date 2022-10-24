@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <list>
 #include "Globals.h"
@@ -23,7 +25,7 @@ public:
 	ModuleSceneIntro* scene_intro;
 	ModuleRenderer3D* renderer3D;
 	ModuleCamera3D* camera;
-	//SaveAndLoad* save_load;
+	SaveAndLoad* save_load;
 
 	bool debug;
 
