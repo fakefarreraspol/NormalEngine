@@ -181,15 +181,6 @@ update_status ModuleSceneIntro::Update(float dt)
             ImGui::EndMenu();
         }
 
-        if (ImGui::BeginMenu("Help"))
-        {
-            if (ImGui::Button("About"))
-            {
-                activateAbout = !activateAbout;
-            }
-            ImGui::EndMenu();
-        }
-
         if (ImGui::BeginMenu("Configuration"))
         {
             if (ImGui::BeginMenu("Window"))
@@ -210,63 +201,12 @@ update_status ModuleSceneIntro::Update(float dt)
                     }
                 }
 
-                ImGui::SameLine();
-                if (ImGui::Checkbox("Resizable", &fullscreen))
-                    App->window->FullscreenSet(fullscreen);
-                if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Restart to apply");
-
                 ImGui::Checkbox("Wireframe", &boolWireframe);
 
                 ImGui::Checkbox("Vsync", &vsync);
                 {
 
                 }
-
-                ImGui::EndMenu();
-            }
-
-            if (ImGui::BeginMenu("Application"))
-            {
-                /*
-                vector<float> fps_log;
-                vector<float> ms_log;
-                char title[25];
-                sprintf_s(title, 25, "Framerate %.1f", fps_log[fps_log.size() - 1]);
-                ImGui::PlotHistogram("##framerate", &fps_log[0], fps_log.size(), 0, title, 0.0f, 100.0f, ImVec2(310, 100));
-                sprintf_s(title, 25, "Milliseconds %0.1f", ms_log[ms_log.size() - 1]);
-                ImGui::PlotHistogram("##milliseconds", &ms_log[0], ms_log.size(), 0, title, 0.0f, 100.0f, ImVec2(310, 100));
-                */
-
-                ImGui::EndMenu();
-            }
-
-            if (ImGui::BeginMenu("Input"))
-            {
-                ImGuiIO& io = ImGui::GetIO();
-                if (ImGui::TreeNode("Mouse Data"))
-                {
-                    if (ImGui::IsMousePosValid())
-                        ImGui::Text("Mouse pos: (%g, %g)", io.MousePos.x, io.MousePos.y);
-                    else
-                        ImGui::Text("Mouse pos: <INVALID>");
-                    ImGui::Text("Mouse delta: (%g, %g)", io.MouseDelta.x, io.MouseDelta.y);
-
-                    int count = IM_ARRAYSIZE(io.MouseDown);
-                    ImGui::Text("Mouse down:");         for (int i = 0; i < count; i++) if (ImGui::IsMouseDown(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 0.4f, 0.4f, 1.0f),"b%d (%.02f secs)", i, io.MouseDownDuration[i]); }
-                    ImGui::Text("Mouse clicked:");      for (int i = 0; i < count; i++) if (ImGui::IsMouseClicked(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 0.4f, 0.4f, 1.0f), "b%d (%d)", i, ImGui::GetMouseClickedCount(i)); }
-                    ImGui::Text("Mouse released:");     for (int i = 0; i < count; i++) if (ImGui::IsMouseReleased(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 0.4f, 0.4f, 1.0f), "b%d", i); }
-                    ImGui::Text("Mouse wheel: %.1f", io.MouseWheel);
-                    ImGui::Text("Pen Pressure: %.1f", io.PenPressure); // Note: currently unused
-                    ImGui::TreePop();
-                }
-
-                ImGui::EndMenu();
-            }
-
-            if (ImGui::BeginMenu("Style"))
-            {
-                ImGui::ShowStyleEditor();
 
                 ImGui::EndMenu();
             }
@@ -279,6 +219,60 @@ update_status ModuleSceneIntro::Update(float dt)
                 ImGui::EndMenu();
             }
 
+            if (ImGui::BeginMenu("Style"))
+            {
+                ImGui::ShowStyleEditor();
+
+                ImGui::EndMenu();
+            }
+
+            ImGui::EndMenu();
+        }
+
+        if (ImGui::BeginMenu("Information"))
+        {
+            ImGuiIO& io = ImGui::GetIO();
+            if (ImGui::TreeNode("Mouse Data"))
+            {
+                if (ImGui::IsMousePosValid())
+                {
+                    ImGui::Text("Mouse pos: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "(%g, %g)", io.MousePos.x, io.MousePos.y); }
+                }
+                else
+                {
+                    ImGui::Text("Mouse pos: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "<INVALID>"); };
+                }
+
+                ImGui::Text("Mouse delta: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "(%g, %g)", io.MouseDelta.x, io.MouseDelta.y); }
+
+                int count = IM_ARRAYSIZE(io.MouseDown);
+                ImGui::Text("Mouse down: ");         for (int i = 0; i < count; i++) if (ImGui::IsMouseDown(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "b%d (%.02f secs)", i, io.MouseDownDuration[i]); }
+                ImGui::Text("Mouse clicked: ");      for (int i = 0; i < count; i++) if (ImGui::IsMouseClicked(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "b%d (%d)", i, ImGui::GetMouseClickedCount(i)); }
+                ImGui::Text("Mouse released: ");     for (int i = 0; i < count; i++) if (ImGui::IsMouseReleased(i)) { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "b%d", i); }
+                ImGui::Text("Mouse wheel: ", io.MouseWheel); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%.1f", io.MouseWheel); }
+                ImGui::Text("Pen Pressure: ", io.PenPressure); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%.1f", io.PenPressure); } // Note: currently unused
+                ImGui::TreePop();
+            }
+
+            ImGui::Separator();
+
+            if (ImGui::TreeNode("Computer Data"))
+            {
+                ImGui::Text("System: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%s", SDL_GetPlatform()); }
+                ImGui::Text("CPU cores: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%d", SDL_GetCPUCount()); }
+                ImGui::Text("RAM: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%.2f GB", SDL_GetSystemRAM() / 1024.0f); }
+                ImGui::TreePop();
+            }
+
+            ImGui::EndMenu();
+        }
+
+        if (ImGui::BeginMenu("Help"))
+        {
+            if (ImGui::Button("About"))
+            {
+                activateAbout = !activateAbout;
+            }
             ImGui::EndMenu();
         }
 
