@@ -158,7 +158,7 @@ void ModuleWindow::GetWindowsSize(SDL_Window* window, int& width, int& height)
 	SDL_GetWindowSize(window, &width, &height);
 }
 
-void ModuleWindow::SetWindowSize(uint width, uint height)
+void ModuleWindow::SetWindowSize()
 {
 	SDL_SetWindowSize(window, width, height);
 }

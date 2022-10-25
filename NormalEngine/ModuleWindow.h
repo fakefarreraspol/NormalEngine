@@ -25,11 +25,13 @@ public:
 	float GetBrightness()const;
 	void SetBrightness(float value);
 	void GetWindowsSize(SDL_Window* window, int& width, int& height);
-	void SetWindowSize(uint width, uint height);
+	void SetWindowSize();
 	void ActivateVsync(bool vsync);
 	void SetTitle(const char* title);
 
 	bool vsync = false;
+	int width = 1280;
+	int height = 720;
 
 	SDL_Window* GetSDLWindow()
 	{

@@ -181,10 +181,83 @@ update_status ModuleSceneIntro::Update(float dt)
                 ImGui::Text("System: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%s", SDL_GetPlatform()); }
                 ImGui::Text("SDL Version: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%u.%u.%u", linked.major, linked.minor, linked.patch); }
 
-                ImGui::Separator();
-
                 ImGui::Text("CPU cores: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%d", SDL_GetCPUCount()); }
                 ImGui::Text("RAM: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%.2f GB", SDL_GetSystemRAM() / 1024.0f); }
+
+                if (SDL_HasRDTSC() == SDL_bool::SDL_TRUE)
+                {
+                    ImGui::SameLine();
+                    ImGui::TextColored(ImVec4(1, 1, 0, 1), "RDTSC,");
+                }
+                if (SDL_HasMMX() == SDL_bool::SDL_TRUE)
+                {
+                    ImGui::SameLine();
+                    ImGui::TextColored(ImVec4(1, 1, 0, 1), "MMX,");
+                }
+                if (SDL_HasSSE() == SDL_bool::SDL_TRUE)
+                {
+                    ImGui::SameLine();
+                    ImGui::TextColored(ImVec4(1, 1, 0, 1), "SSE,");
+                }
+                if (SDL_HasSSE2() == SDL_bool::SDL_TRUE)
+                {
+                    ImGui::SameLine();
+                    ImGui::TextColored(ImVec4(1, 1, 0, 1), "SSE2,");
+                }
+                if (SDL_HasSSE3() == SDL_bool::SDL_TRUE)
+                {
+                    ImGui::TextColored(ImVec4(1, 1, 0, 1), "SSE3,");
+                }
+                if (SDL_HasSSE41() == SDL_bool::SDL_TRUE)
+                {
+                    ImGui::SameLine();
+                    ImGui::TextColored(ImVec4(1, 1, 0, 1), "SSE41,");
+                }
+                if (SDL_HasSSE42() == SDL_bool::SDL_TRUE)
+                {
+                    ImGui::SameLine();
+                    ImGui::TextColored(ImVec4(1, 1, 0, 1), "SSE41,");
+                }
+                if (SDL_HasAVX() == SDL_bool::SDL_TRUE)
+                {
+                    ImGui::SameLine();
+                    ImGui::TextColored(ImVec4(1, 1, 0, 1), "AVX,");
+                }
+                if (SDL_HasAVX2() == SDL_bool::SDL_TRUE)
+                {
+                    ImGui::SameLine();
+                    ImGui::TextColored(ImVec4(1, 1, 0, 1), "AVX2");
+                }
+                ImGui::Separator();
+
+                const GLubyte* vendor = glGetString(GL_VENDOR);
+                const GLubyte* renderer = glGetString(GL_RENDERER);
+
+                ImGui::Text("GPU:");
+                ImGui::SameLine();
+                ImGui::TextColored(ImVec4(1, 1, 0, 1), "%s", vendor);
+
+                ImGui::Text("Brand:");
+                ImGui::SameLine();
+                ImGui::TextColored(ImVec4(1, 1, 0, 1), "%s", renderer);
+
+                GLint parameter = 0;
+                ImGui::Text("VRAM budget:");
+                ImGui::SameLine();
+                ImGui::TextColored(ImVec4(1, 1, 0, 1), "%dMB", parameter / 1024);
+
+                ImGui::Text("VRAM usage:");
+                ImGui::SameLine();
+                ImGui::TextColored(ImVec4(1, 1, 0, 1), "%dMB", parameter / 1024);
+
+                //glGetIntegerv(GL_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX, &parameter);
+                ImGui::Text("VRAM available:");
+                ImGui::SameLine();
+                ImGui::TextColored(ImVec4(1, 1, 0, 1), "%dMB", parameter / 1024);
+
+                ImGui::Text("VRAM reserved:");
+                ImGui::SameLine();
+                ImGui::TextColored(ImVec4(1, 1, 0, 1), "%dMB", parameter / 1024);
 
                 ImGui::TreePop();
             }
@@ -226,6 +299,16 @@ update_status ModuleSceneIntro::Update(float dt)
                 if (ImGui::SliderFloat("Brightness", &brightness, 0.000f, 1.000f))
                 {
                     App->window->SetBrightness(brightness);
+                }
+
+                if (ImGui::SliderInt("Width", &App->window->width, 720, 1920))
+                {
+                    App->window->SetWindowSize();
+                }
+
+                if (ImGui::SliderInt("Height", &App->window->height, 480, 1080))
+                {
+                    App->window->SetWindowSize();
                 }
 
                 ImGui::EndMenu();
