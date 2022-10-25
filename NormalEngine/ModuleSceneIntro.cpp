@@ -258,9 +258,17 @@ update_status ModuleSceneIntro::Update(float dt)
 
             if (ImGui::TreeNode("Computer Data"))
             {
+                SDL_version linked;
+                SDL_GetVersion(&linked);
+
                 ImGui::Text("System: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%s", SDL_GetPlatform()); }
+                ImGui::Text("SDL Version: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%u.%u.%u", linked.major, linked.minor, linked.patch); }
+
+                ImGui::Separator();
+
                 ImGui::Text("CPU cores: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%d", SDL_GetCPUCount()); }
                 ImGui::Text("RAM: "); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%.2f GB", SDL_GetSystemRAM() / 1024.0f); }
+
                 ImGui::TreePop();
             }
 
