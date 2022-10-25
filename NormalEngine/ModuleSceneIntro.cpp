@@ -311,6 +311,8 @@ update_status ModuleSceneIntro::Update(float dt)
                     App->window->SetWindowSize();
                 }
 
+                ImGui::Text("Updated window size: Width:"); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%i ", App->window->width); } { ImGui::SameLine(); ImGui::Text("Height:"); } { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%i", App->window->height); }
+
                 ImGui::EndMenu();
             }
 
