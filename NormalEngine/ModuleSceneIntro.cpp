@@ -43,6 +43,9 @@ bool ModuleSceneIntro::Start()
 	// Setup Dear ImGui style
 	ImGui::StyleColorsDark();
 
+    width = SCREEN_WIDTH;
+    height = SCREEN_HEIGHT;
+
 	return ret;
 }
 
@@ -93,6 +96,7 @@ update_status ModuleSceneIntro::Update(float dt)
 
     if (ImGui::BeginMainMenuBar())
     {
+        // File tab
         if (ImGui::BeginMenu("File"))
         {
             if (ImGui::MenuItem("New Scene", "CTRL+N")) {}
@@ -111,6 +115,7 @@ update_status ModuleSceneIntro::Update(float dt)
             ImGui::EndMenu();
         }
 
+        // Edit tab
         if (ImGui::BeginMenu("Edit"))
         {
             if (ImGui::MenuItem("Undo", "CTRL+Z")) {}
@@ -134,54 +139,13 @@ update_status ModuleSceneIntro::Update(float dt)
             ImGui::EndMenu();
         }
 
-        if (ImGui::BeginMenu("Configuration"))
+        // Import tab
+        if (ImGui::BeginMenu("Import"))
         {
-            if (ImGui::BeginMenu("Window"))
-            {
-                ImGui::Checkbox("Fullscreen", &fullscreen);
-                {
-                    if (fullscreen == true)
-                    {
-                        fullscreenno = true;
-                        App->window->FullscreenSet(fullscreen);
 
-                    }
-
-                    if (fullscreen == false)
-                    {
-                        fullscreenno = false;
-                        App->window->FullscreenNoSet(fullscreenno);
-                    }
-                }
-
-                ImGui::Checkbox("Wireframe", &boolWireframe);
-
-                ImGui::Checkbox("Vsync", &vsync);
-                {
-
-                }
-
-                ImGui::EndMenu();
-            }
-
-            if (ImGui::BeginMenu("Audio"))
-            {
-                static auto i = 100;
-                ImGui::SliderInt("Volume", &i, 0, 100);
-
-                ImGui::EndMenu();
-            }
-
-            if (ImGui::BeginMenu("Style"))
-            {
-                ImGui::ShowStyleEditor();
-
-                ImGui::EndMenu();
-            }
-
-            ImGui::EndMenu();
         }
 
+        // Information tab
         if (ImGui::BeginMenu("Information"))
         {
             ImGuiIO& io = ImGui::GetIO();
@@ -228,6 +192,70 @@ update_status ModuleSceneIntro::Update(float dt)
             ImGui::EndMenu();
         }
 
+        // Configuration tab
+        if (ImGui::BeginMenu("Configuration"))
+        {
+            if (ImGui::BeginMenu("Window"))
+            {
+                ImGui::Checkbox("Fullscreen", &fullscreen);
+                {
+                    if (fullscreen == true)
+                    {
+                        fullscreenno = true;
+                        App->window->FullscreenSet(fullscreen);
+
+                    }
+
+                    if (fullscreen == false)
+                    {
+                        fullscreenno = false;
+                        App->window->FullscreenNoSet(fullscreenno);
+                    }
+                }
+
+                ImGui::Checkbox("Wireframe", &boolWireframe);
+
+                ImGui::Checkbox("Vsync", &vsync);
+                {
+                    App->window->GetWindowsSize(App->window->window, width, height);
+                    if (ImGui::SliderInt("Width", &width, 720, 1920))
+                    {
+                        App->window->SetWindowSize(width, height);
+                    }
+                    if (ImGui::SliderInt("Height", &height, 480, 1080))
+                    {
+                        App->window->SetWindowSize(width, height);
+                    }
+                }
+
+                brightness = App->window->GetBrightness();
+                if (ImGui::SliderFloat("Brightness", &brightness, 0.000f, 1.000f))
+                {
+                    App->window->SetBrightness(brightness);
+                }
+
+                ImGui::EndMenu();
+            }
+
+            if (ImGui::BeginMenu("Audio"))
+            {
+                static auto i = 100;
+                ImGui::SliderInt("Volume", &i, 0, 100);
+
+                ImGui::EndMenu();
+            }
+
+            if (ImGui::BeginMenu("Style"))
+            {
+                ImGui::ShowStyleEditor();
+
+                ImGui::EndMenu();
+            }
+
+            ImGui::EndMenu();
+        }
+
+        // Help tab
         if (ImGui::BeginMenu("Help"))
         {
             if (ImGui::Button("About"))

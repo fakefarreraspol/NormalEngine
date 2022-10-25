@@ -19,10 +19,15 @@ public:
 	bool Init();
 	bool CleanUp();
 
-	void SetTitle(const char* title);
 	void FullscreenSet(bool fullscreen);
 	void FullscreenNoSet(bool fullscreenno);
 	void Vsync(bool fullscreenno);
+	float GetBrightness()const;
+	void SetBrightness(float value);
+	void GetWindowsSize(SDL_Window* window, int& width, int& height);
+	void SetWindowSize(uint width, uint height);
+	void SetTitle(const char* title);
+
 
 	SDL_Window* GetSDLWindow()
 	{

@@ -37,6 +37,9 @@ public:
 	bool activateAbout = false;
 
 	// Screen
+	float brightness = 1.000f;
+	int width;
+	int height;
 	bool fullscreen = false;
 	bool fullscreenno = false;
 	bool vsync = false;
