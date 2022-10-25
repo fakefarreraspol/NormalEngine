@@ -135,7 +135,7 @@ void ModuleWindow::FullscreenNoSet(bool fullscreenno)
 
 void ModuleWindow::Vsync(bool vsync)
 {
-
+	vsync = SDL_HINT_RENDER_VSYNC;
 }
 
 float ModuleWindow::GetBrightness() const
@@ -161,6 +161,11 @@ void ModuleWindow::GetWindowsSize(SDL_Window* window, int& width, int& height)
 void ModuleWindow::SetWindowSize(uint width, uint height)
 {
 	SDL_SetWindowSize(window, width, height);
+}
+
+void ModuleWindow::ActivateVsync(bool vsync)
+{
+	vsync = SDL_HINT_RENDER_VSYNC;
 }
 
 void ModuleWindow::SetTitle(const char* title)

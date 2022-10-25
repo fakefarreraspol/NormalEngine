@@ -44,6 +44,7 @@ public:
 	bool fullscreenno = false;
 	bool vsync = false;
 	bool boolWireframe = false;
+	bool checkResizable = false;
 
 	// Textures
 	bool activateDepthTest = false;

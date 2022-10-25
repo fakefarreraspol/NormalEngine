@@ -215,17 +215,11 @@ update_status ModuleSceneIntro::Update(float dt)
 
                 ImGui::Checkbox("Wireframe", &boolWireframe);
 
+                ImGui::Checkbox("Resizable", &checkResizable);
+
                 ImGui::Checkbox("Vsync", &vsync);
                 {
-                    App->window->GetWindowsSize(App->window->window, width, height);
-                    if (ImGui::SliderInt("Width", &width, 720, 1920))
-                    {
-                        App->window->SetWindowSize(width, height);
-                    }
-                    if (ImGui::SliderInt("Height", &height, 480, 1080))
-                    {
-                        App->window->SetWindowSize(width, height);
-                    }
+                    App->window->ActivateVsync(App->window->vsync);
                 }
 
                 brightness = App->window->GetBrightness();
