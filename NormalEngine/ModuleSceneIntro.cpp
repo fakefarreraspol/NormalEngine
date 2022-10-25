@@ -142,7 +142,7 @@ update_status ModuleSceneIntro::Update(float dt)
         // Import tab
         if (ImGui::BeginMenu("Import"))
         {
-
+            ImGui::EndMenu();
         }
 
         // Information tab
