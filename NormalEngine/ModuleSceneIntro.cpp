@@ -142,6 +142,30 @@ update_status ModuleSceneIntro::Update(float dt)
         // Import tab
         if (ImGui::BeginMenu("Import"))
         {
+            if (ImGui::MenuItem("Cube", "CTRL+1")) 
+            {
+                App->importf->DrawCube();
+            }
+
+            if (ImGui::MenuItem("Sphere", "CTRL+2"))
+            {
+                App->importf->DrawSphere();
+            }
+
+            if (ImGui::MenuItem("Pyramid", "CTRL+3"))
+            {
+                App->importf->DrawPyramid();
+            }
+
+            if (ImGui::MenuItem("House", "CTRL+4"))
+            {
+                App->importf->DrawHouse();
+            }
+
+            if (ImGui::MenuItem("Train Station", "CTRL+5"))
+            {
+                App->importf->DrawStation();
+            }
             ImGui::EndMenu();
         }
 

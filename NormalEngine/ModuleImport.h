@@ -1,10 +1,8 @@
 #pragma once
-#ifndef __ModuleImport_H__
-#define __ModuleImport_H__
-
-#include "cimport.h"
-#include "scene.h"
-#include "postprocess.h"
+#include "Module.h"
+#include "Globals.h"
+#include <iostream>
+#include <list>
 
 using namespace std;
 
@@ -20,8 +18,15 @@ public:
 	update_status PostUpdate(float dt) override;
 	bool CleanUp();
 
+	// Drawing primitives
+	void DrawCube();
+	void DrawSphere();
+	void DrawPyramid();
+
+	// Drawing sets
+	void DrawHouse();
+	void DrawStation();
+
 private:
 
 };
-
-#endif // __ModuleImport_H__
