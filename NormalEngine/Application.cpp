@@ -10,6 +10,7 @@ Application::Application() : debug(false)
 	camera = new ModuleCamera3D(this);
 	scene_intro = new ModuleSceneIntro(this);
 	save_load = new SaveAndLoad(this);
+	importf = new ModuleImport(this);
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order
 	// They will CleanUp() in reverse order
@@ -27,8 +28,11 @@ Application::Application() : debug(false)
 	// Renderer last!
 	AddModule(renderer3D);
 	
-
+	// Save and Load
 	AddModule(save_load);
+
+	// Import files
+	AddModule(importf);
 }
 
 Application::~Application()

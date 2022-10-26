@@ -13,6 +13,8 @@
 #include "PTimer.h"
 #include "ModuleSceneIntro.h"
 #include "SaveAndLoad.h"
+#include "ModuleImport.h"
+
 using namespace std;
 
 
@@ -26,6 +28,7 @@ public:
 	ModuleRenderer3D* renderer3D;
 	ModuleCamera3D* camera;
 	SaveAndLoad* save_load;
+	ModuleImport* importf;
 
 	bool debug;
 

@@ -76,6 +76,9 @@
     <ClCompile Include="SaveAndLoad.cpp">
       <Filter>Modules\Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="ModuleImport.cpp">
+      <Filter>Modules\Cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -169,6 +172,9 @@
       <Filter>Core\Headers</Filter>
     </ClInclude>
     <ClInclude Include="SaveAndLoad.h">
+      <Filter>Modules\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleImport.h">
       <Filter>Modules\Headers</Filter>
     </ClInclude>
   </ItemGroup>
