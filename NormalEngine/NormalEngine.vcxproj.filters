@@ -79,6 +79,9 @@
     <ClCompile Include="ModuleImport.cpp">
       <Filter>Modules\Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Core\Cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -176,6 +179,9 @@
     </ClInclude>
     <ClInclude Include="ModuleImport.h">
       <Filter>Modules\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Core\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

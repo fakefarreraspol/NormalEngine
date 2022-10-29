@@ -4,6 +4,7 @@
 #include "ModuleWindow.h"
 #include "ModuleRenderer3D.h"
 #include "Primitive.h"
+#include "glew.h"
 #include "SDL_opengl.h"
 
 #include "imgui.h"
@@ -157,15 +158,17 @@ update_status ModuleSceneIntro::Update(float dt)
                 App->importf->DrawPyramid();
             }
 
+            
             if (ImGui::MenuItem("House", "CTRL+4"))
             {
-                App->importf->DrawHouse();
+                App->importf->FileLoad("Assets\BakerHouse.fbx");
             }
 
             if (ImGui::MenuItem("Train Station", "CTRL+5"))
             {
-                App->importf->DrawStation();
+                App->importf->FileLoad("Assets\BakerHouse.fbx");
             }
+
             ImGui::EndMenu();
         }
 

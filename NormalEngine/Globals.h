@@ -29,6 +29,10 @@ void log(const char file[], int line, const char* format, ...);
 
 typedef unsigned int uint;
 
+struct float3
+{
+	float x, y, z;
+};
 
 enum update_status
 {
@@ -38,5 +42,5 @@ enum update_status
 };
 
 class Application;
-//I hope no one notices this...
+// I hope no one notices this...
 extern Application* App;
