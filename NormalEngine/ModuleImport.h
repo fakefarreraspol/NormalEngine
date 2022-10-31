@@ -38,6 +38,36 @@ public:
 	Mesh MeshLoad(aiMesh* mesh, const aiScene* scene);
 
 	vector<Mesh> meshes;
-
+	int testNumber = 0;
 private:
+};
+
+
+struct MeshVertexData
+{
+
+	uint id_index = 0; // index in VRAM
+	uint num_indices = 0;
+	uint* indices = nullptr;
+
+	uint id_vertex = 0; // unique vertex in VRAM
+	uint num_vertices = 0;
+	float* vertices = nullptr;
+
+	/*GLuint id_normal = 0;
+	aiVector3D num_normals[3] = {};
+	float* normals = nullptr;
+
+	GLuint id_normalVertices = 0;
+	GLfloat* normalVertices = nullptr;*/
+
+	uint id_UV = 0; // id of the UV
+	uint num_UVs = 0;
+	//GLfloat* texture_coords_indices = nullptr;
+
+	//TextureData meshTexturesData;
+	std::string	path;
+
+	
+	//TransformComponent transform; //Hacerlo en un modulo ComponentTransorm
 };

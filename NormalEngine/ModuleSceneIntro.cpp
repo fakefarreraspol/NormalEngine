@@ -161,12 +161,12 @@ update_status ModuleSceneIntro::Update(float dt)
             
             if (ImGui::MenuItem("House", "CTRL+4"))
             {
-                App->importf->FileLoad("Assets\BakerHouse.fbx");
+                App->importf->FileLoad("Assets/BakerHouse.fbx");
             }
 
             if (ImGui::MenuItem("Train Station", "CTRL+5"))
             {
-                App->importf->FileLoad("Assets\BakerHouse.fbx");
+                App->importf->FileLoad("Game\Assets\BakerHouse.fbx");
             }
 
             ImGui::EndMenu();
@@ -430,6 +430,10 @@ update_status ModuleSceneIntro::Update(float dt)
         }
         ImGui::End();
     }
+
+
+    /*const char* filepath = ("Assets\BakerHouse.fbx");
+    App->importf->FileLoad(filepath);*/
 
 	return UPDATE_CONTINUE;
 }

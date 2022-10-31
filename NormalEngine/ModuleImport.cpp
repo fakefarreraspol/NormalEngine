@@ -1,3 +1,4 @@
+#include "glew.h"
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleSceneIntro.h"
@@ -8,6 +9,8 @@
 #include "cimport.h"
 #include "scene.h"
 #include "postprocess.h"
+
+
 
 #pragma comment (lib, "assimp-vc142-mt.lib")
 #pragma comment (lib, "opengl32.lib") /* link Microsoft OpenGL lib   */
@@ -40,8 +43,8 @@ bool ModuleImport::Start()
 	stream = aiGetPredefinedLogStream(aiDefaultLogStream_DEBUGGER, nullptr);
 	aiAttachLogStream(&stream);
 
-	const char* filepath = ("NormalEngine\Game\Assets\BakerHouse.fbx");
-	FileLoad(filepath);
+	/*const char* filepath = ("Assets\BakerHouse.fbx");
+	FileLoad(filepath);*/
 
 	return ret;
 }
@@ -115,18 +118,38 @@ Mesh ModuleImport::MeshLoad(aiMesh* mesh, const aiScene* scene)
 
 void ModuleImport::FileLoad(const char* file_path)
 {
-    const aiScene* scene = aiImportFile(file_path, aiProcessPreset_TargetRealtime_MaxQuality);
+    
+	if (file_path != nullptr)
+	{
+		const aiScene* scene = aiImportFile(file_path, aiProcessPreset_TargetRealtime_MaxQuality);
+		if (scene != nullptr && scene->HasMeshes())
+		{
+		    // Use scene->mNumMeshes to iterate on scene->mMeshes array
+		    NodeLoad(scene->mRootNode, scene);
+		    aiReleaseImport(scene);
+		}
+		else
+		{
+		    const char* a = aiGetErrorString();
+		}
 
-    if (scene != nullptr && scene->HasMeshes())
-    {
-        // Use scene->mNumMeshes to iterate on scene->mMeshes array
-        NodeLoad(scene->mRootNode, scene);
-        aiReleaseImport(scene);
-    }
+		if (scene == nullptr)
+		{
+			testNumber = 2;
+			//Texto de ejemplo
+
+		}
+
+
+
+
+		
+	}
     else
     {
-        const char* a = aiGetErrorString();
+
     }
+    
 }
 
 void ModuleImport::DrawCube()
