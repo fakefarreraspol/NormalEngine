@@ -98,7 +98,6 @@ public:
 	uint TextureLoad(const char* path);
 	uint TextureChecker();
 
-	vector<Mesh> meshes;
 	int testNumber = 0;
 
 private:

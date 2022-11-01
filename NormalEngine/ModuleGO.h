@@ -4,6 +4,10 @@
 #include "Application.h"
 #include "Module.h"
 #include "ModuleImport.h"
+#include <vector>
+
+using namespace std;
+
 
 struct GameObject
 {

@@ -70,9 +70,6 @@
     <ClCompile Include="FileSystem.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="parson\parson.c">
       <Filter>External</Filter>
     </ClCompile>
@@ -181,9 +178,6 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Module.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Mesh.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="parson\parson.h">
