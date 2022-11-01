@@ -1,9 +1,6 @@
 #include "Globals.h"
 #include <gl/GL.h>
-
 #include "Primitive.h"
-
-
 
 
 // ------------------------------------------------------------

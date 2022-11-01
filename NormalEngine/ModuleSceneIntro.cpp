@@ -143,28 +143,47 @@ update_status ModuleSceneIntro::Update(float dt)
         // Import tab
         if (ImGui::BeginMenu("Import"))
         {
-            if (ImGui::MenuItem("Cube", "CTRL+1")) 
+            if (ImGui::MenuItem("Cone", "CTRL+1"))
             {
-                App->importf->DrawCube();
+                App->importf->MeshLoad("Assets/Primitives/cone.fbx");
             }
 
-            if (ImGui::MenuItem("Sphere", "CTRL+2"))
+            if (ImGui::MenuItem("Cube", "CTRL+2")) 
             {
-                App->importf->DrawSphere();
+                App->importf->MeshLoad("Assets/Primitives/cube.fbx");
             }
 
-            if (ImGui::MenuItem("Pyramid", "CTRL+3"))
+            if (ImGui::MenuItem("Cylinder", "CTRL+3"))
             {
-                App->importf->DrawPyramid();
+                App->importf->MeshLoad("Assets/Primitives/cylinder.fbx");
             }
 
+            if (ImGui::MenuItem("Polyhedron", "CTRL+4"))
+            {
+                App->importf->MeshLoad("Assets/Primitives/polyhedron.fbx");
+            }
+
+            if (ImGui::MenuItem("Pyramid", "CTRL+5"))
+            {
+                App->importf->MeshLoad("Assets/Primitives/pyramid.fbx");
+            }
+
+            if (ImGui::MenuItem("Sphere", "CTRL+6"))
+            {
+                App->importf->MeshLoad("Assets/Primitives/sphere.fbx");
+            }
+
+            if (ImGui::MenuItem("Torus", "CTRL+7"))
+            {
+                App->importf->MeshLoad("Assets/Primitives/torus.fbx");
+            }
             
-            if (ImGui::MenuItem("House", "CTRL+4"))
+            if (ImGui::MenuItem("House", "CTRL+8"))
             {
                 App->importf->LoadAll("Assets/BakerHouse.fbx", "Assets/bakeHouse.png");
             }
 
-            if (ImGui::MenuItem("Train Station", "CTRL+5"))
+            if (ImGui::MenuItem("Train Station", "CTRL+9"))
             {
                 App->importf->LoadAll("Assets/BusStation.fbx", "Assets/lambert23_Base_Color.png");
             }
