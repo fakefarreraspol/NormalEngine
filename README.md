@@ -1,7 +1,7 @@
 # Normal Engine
 
 <p align="center">
-  ![alt text](https://github.com/fakefarreraspol/NormalEngine/blob/main/NormalEngine/docs/NormalEngine_logo.png "Logo Title Text 1") <br />
+  [![alt text](https://github.com/fakefarreraspol/NormalEngine/blob/main/NormalEngine/docs/NormalEngine_logo.png "Logo Title Text 1")](https://github.com/fakefarreraspol/NormalEngine/blob/main/NormalEngine/docs/NormalEngine_logo.png) <br />
 </p>
 
 The objective of this project is to create a working engine to create videogames.  <br />
