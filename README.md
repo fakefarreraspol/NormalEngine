@@ -1,25 +1,76 @@
-
-
 <p align="center">
   <img width="417" height="91" src="https://github.com/fakefarreraspol/NormalEngine/blob/main/NormalEngine/docs/NormalEngine_logo.png"> <br />
 
-   
-</p>
 
 # Normal Engine
-Normal Engine is made by students from CITM Barcelona for a Videogames Design and Development degree subject.  <br />
-Normal Engine is a free to use Game Engine made in c++ and has the basic tools to create a game. <br />
+Normal Engine is a free to use Game Engine made in c++ with the basic tools to create a game. Made by students from CITM Barcelona for the Game Engines subject. <br />
+To access to the webpage of the engine, click the following link: [webpage](https://github.com/)
+
+<br>
+
 
 ## Usage Guide
+The engine consists of a menu bar, located in the upper part of the screen, where you can control the engine, computer and object stats. Followed with a 3D area where you are able to deploy all the objects and navigate through them.
+
+<br>
+
 
 ## Controls
+~~~~~~~~~~~~~~~
+
+File controls:
+- NEW SCENE --> Ctrl + N
+- OPEN SCENE --> Ctrl + 0
+- SAVE --> Ctrl + S
+- SAVE AS --> Ctrl + Shift + S
+- STOP --> ESC key
+
+Edit Controls:
+- UNDO --> Ctrl + Z
+- REDO --> Ctrl + Y
+- CUT --> Ctrl + X
+- COPY --> Ctrl + C
+- PASTE --> Ctrl + V
+- SELECT ALL --> Ctrl + A
+- DESELECT ALL --> Shift + D
+- SELECT CHILDREN --> Ctrl + C
+- INVERT SELECTION --> Ctrl + I
+- DUPLICATE --> Ctrl + D
+- PLAY --> Ctrl + P
+- PAUSE --> Ctrl + Shift + P
+
+Import Controls:
+- CUBE --> Ctrl + 1
+- SPHERE --> Ctrl + 2
+- PYRAMID --> Ctrl + 3
+- HOUSE --> Ctrl + 4
+- TRAIN STATION --> Ctrl + 5
+
+Mouse controls:
+- LEFT CLICK --> Selection
+
+~~~~~~~~~~~~~~~
+
+<br>
+
 
 ## Developers
--Carlos Javier Arnau Montoriol [carlosarnau](https://github.com/carlosarnau) <br />
--Pol Farreras Olivera [fakefarreraspol](https://github.com/fakefarreraspol) <br />
+- Carlos Javier Arnau Montoriol [carlosarnau](https://github.com/carlosarnau) <br />
+- Pol Farreras Olivera [fakefarreraspol](https://github.com/fakefarreraspol) <br />
+
+<br>
+
+## Additional Functionalities
+No additional fucnionalities yet.
+<br>
+
+
+## Additional Comments
+
+<br>
+
 
 ## License
-
 MIT License <br /> <br />
 
 Copyright (c) 2022 ª̵̢̳̯̹̗̘̮̈́̽̽̂̽̿̃̔̈́̔͠ª̵̢̳̯̹̗̘̮̈́̽̽̂̽̿̃̔̈́̔͠ª̵̢̳̯̹̗̘̮̈́̽̽̂̽̿̃̔̈́̔͠    <br /> <br />
