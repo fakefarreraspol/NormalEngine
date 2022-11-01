@@ -13,8 +13,11 @@
 #include "imgui_impl_sdl.h"
 #include "SDL_opengl.h"
 
+
+#pragma comment (lib, "glu32.lib")    /* link OpenGL Utility lib     */
 #pragma comment (lib, "opengl32.lib") /* link Microsoft OpenGL lib   */
-#pragma comment (lib, "glew/lib/Release/Win32/glew32s.lib")
+#pragma comment (lib, "glew32.lib")
+#pragma comment (lib, "glew32s.lib")
 
 
 ModuleRenderer3D::ModuleRenderer3D(Application* app, bool start_enabled) : Module(app, start_enabled)
