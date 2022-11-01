@@ -64,6 +64,7 @@ Mouse controls:
 
 ## Additional Functionalities
 No additional fucnionalities yet.
+
 <br>
 
 
