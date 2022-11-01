@@ -1,9 +1,9 @@
-#include "SaveAndLoad.h"
+
 #include "Application.h"
 #include "Globals.h"
 #include "Application.h"
 
-
+#include "SaveAndLoad.h"
 
 SaveAndLoad::SaveAndLoad(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -52,9 +52,10 @@ bool SaveAndLoad::CleanUp()
 	LOG("Cleaning ModuleSaveLoad");
 
 	// Free file ptr
-	//json_value_free(config);
+	
+	json_value_free(config);
 
-	//delete configurationFile;
+	delete config;
 
 	return true;
 }
@@ -64,7 +65,7 @@ bool SaveAndLoad::Save()
 	
 
 	// Aplying save to the .json file
-	//json_serialize_to_file(config, "movistar");
+	json_serialize_to_file(config, "movistar");
 
 	return true;
 }

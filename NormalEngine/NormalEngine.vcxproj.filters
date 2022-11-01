@@ -85,6 +85,9 @@
     <ClCompile Include="ModuleTextures.cpp">
       <Filter>Modules\Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="parson\parson.c">
+      <Filter>External\parson</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Module.h">
@@ -189,6 +192,9 @@
     <ClInclude Include="ModuleTextures.h">
       <Filter>Modules\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="parson\parson.h">
+      <Filter>External\parson</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Modules">
@@ -217,6 +223,9 @@
     </Filter>
     <Filter Include="External\glew">
       <UniqueIdentifier>{fb33b28b-05e9-4eb7-b7bc-95c217ab55ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\parson">
+      <UniqueIdentifier>{2e1be70b-3c4d-4475-aee3-4cbf0a02d950}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
