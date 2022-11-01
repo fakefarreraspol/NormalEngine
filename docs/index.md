@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="417" height="91" src="https://github.com/fakefarreraspol/NormalEngine/blob/main/NormalEngine/docs/NormalEngine_logo.png"> <br />
+  <img width="417" height="91" src="https://github.com/fakefarreraspol/NormalEngine/blob/main/docs/NormalEngine_logo.png"> <br />
 
    
 </p>
