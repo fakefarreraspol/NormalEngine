@@ -39,6 +39,7 @@ public:
 private:
 	Timer	ms_timer;
 	float	dt;
+	int maxFps = 0;
 	list<Module*> list_modules;
 
 public:
@@ -63,6 +64,8 @@ public:
 	bool FPSCapTo30 = false;
 	float averageFps = 0.0f;
 	int maxFrameRate = 30;
+	int GetMaxFPS()const;
+	void SetMaxFPS(int value);
 
 private:
 	void AddModule(Module* mod);

@@ -257,19 +257,32 @@ update_status ModuleSceneIntro::Update(float dt)
         }
 
         ImGui::Text("Updated window size: Width:"); { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%i ", App->window->width); } { ImGui::SameLine(); ImGui::Text("Height:"); } { ImGui::SameLine(); ImGui::TextColored(ImVec4(1.0f, 1.4f, 0.0f, 1.0f), "%i", App->window->height); }
+        
+        ImGui::Separator();
     }
-
-    ImGui::Separator();
 
     if (ImGui::CollapsingHeader("Extra Settings"))
     {
         static auto i = 100;
         ImGui::SliderInt("Volume", &i, 0, 100);
+
+        ImGui::Separator();
     }
 
-    ImGui::Separator();
+    if (ImGui::CollapsingHeader("FPS")) 
+    {
+        fps = App->GetMaxFPS();
+        ImGui::SliderInt("Max FPS", &fps, 5, 144);
+        ImGui::Text("Limit Framerate is at %d", fps);
+        App->SetMaxFPS(fps);
 
-    if (ImGui::CollapsingHeader("Hardware Information"))
+        ImGui::PlotHistogram("FPS", fpsData, IM_ARRAYSIZE(fpsData), 0, NULL, 0.0f, 144.0f, ImVec2(0, 80));
+        ImGui::PlotHistogram("Miliseconds", msData, IM_ARRAYSIZE(msData), 0, NULL, 0.0f, 40.0f, ImVec2(0, 80));
+
+        ImGui::Separator();
+    }
+
+    if (ImGui::CollapsingHeader("Other Information"))
     {
         // Information
         ImGuiIO& io = ImGui::GetIO();
@@ -297,7 +310,7 @@ update_status ModuleSceneIntro::Update(float dt)
 
         ImGui::Separator();
 
-        if (ImGui::TreeNode("Computer Data"))
+        if (ImGui::TreeNode("Hardware Data"))
         {
             SDL_version linked;
             SDL_GetVersion(&linked);
@@ -462,6 +475,17 @@ update_status ModuleSceneIntro::PostUpdate(float dt)
 	}
 
 	return UPDATE_CONTINUE;
+}
+
+void ModuleSceneIntro::UpdateFrameData(int frames, int ms)
+{
+    for (uint i = 0; i < (MAX_HISTOGRAM_SIZE - 1); ++i)
+    {
+        fpsData[i] = fpsData[i + 1];
+        msData[i] = msData[i + 1];
+    }
+    fpsData[MAX_HISTOGRAM_SIZE - 1] = (float)frames;
+    msData[MAX_HISTOGRAM_SIZE - 1] = (float)ms;
 }
 
 void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)

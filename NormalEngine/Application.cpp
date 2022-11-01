@@ -161,6 +161,16 @@ bool Application::CleanUp()
 	return ret;
 }
 
+int Application::GetMaxFPS() const
+{
+	return maxFps;
+}
+
+void Application::SetMaxFPS(int value)
+{
+	maxFps = value;
+}
+
 void Application::AddModule(Module* mod)
 {
 	list_modules.push_back(mod);

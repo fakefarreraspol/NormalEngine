@@ -5,6 +5,7 @@
 #include <list>
 
 #define MAX_SNAKE 2
+#define MAX_HISTOGRAM_SIZE 100
 
 struct PhysBody3D;
 struct PhysMotor3D;
@@ -26,6 +27,7 @@ public:
 	update_status PostUpdate(float dt) override;
 	bool CleanUp();
 
+	void UpdateFrameData(int frames, int ms);
 	void OnCollision(PhysBody3D* body1, PhysBody3D* body2);
 
 	SDL_Window* window;
@@ -59,6 +61,11 @@ public:
 	{
 		return name;
 	}
+
+	// FPS Values
+	int fps;
+	float fpsData[MAX_HISTOGRAM_SIZE];
+	float msData[MAX_HISTOGRAM_SIZE];
 
 private:
 	list<Primitive*> primitives;
