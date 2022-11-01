@@ -460,6 +460,16 @@ update_status ModuleSceneIntro::Update(float dt)
     }
 
 
+    //save
+    if (App->input->GetKey(SDL_SCANCODE_Z) == KEY_DOWN)
+    {
+        App->save_load->saveTrigger = true;
+    }
+        
+        
+
+
+
     /*const char* filepath = ("Assets\BakerHouse.fbx");
     App->importf->FileLoad(filepath);*/
 
@@ -490,4 +500,11 @@ void ModuleSceneIntro::UpdateFrameData(int frames, int ms)
 
 void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
+}
+
+bool ModuleSceneIntro::SaveRequest()
+{
+    json_object_dotset_boolean(json_object(App->save_load->config), "Fullscreen", fullscreen);
+
+    return true;
 }
