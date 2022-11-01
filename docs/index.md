@@ -43,11 +43,15 @@ Edit Controls:
 - PAUSE --> Ctrl + Shift + P
 
 Import Controls:
-- CUBE --> Ctrl + 1
-- SPHERE --> Ctrl + 2
-- PYRAMID --> Ctrl + 3
-- HOUSE --> Ctrl + 4
-- TRAIN STATION --> Ctrl + 5
+- CONE --> Ctrl + 1
+- CUBE --> Ctrl + 2
+- CYLINDER --> Ctrl + 3
+- POLYHEDRON --> Ctrl + 4
+- PYRAMID --> Ctrl + 5
+- SPHERE --> Ctrl + 6
+- TORUS --> Ctrl + 7
+- HOUSE --> Ctrl + 8
+- TRAIN STATION --> Ctrl + 9
 
 Mouse controls:
 - LEFT CLICK --> Selection
