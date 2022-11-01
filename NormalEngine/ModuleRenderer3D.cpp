@@ -13,7 +13,6 @@
 #include "imgui_impl_sdl.h"
 #include "SDL_opengl.h"
 
-
 #pragma comment (lib, "glu32.lib")    /* link OpenGL Utility lib     */
 #pragma comment (lib, "opengl32.lib") /* link Microsoft OpenGL lib   */
 #pragma comment (lib, "glew32.lib")
@@ -138,30 +137,6 @@ update_status ModuleRenderer3D::PreUpdate(float dt)
 	return UPDATE_CONTINUE;
 }
 
-// PostUpdate present buffer to screen
-update_status ModuleRenderer3D::PostUpdate(float dt)
-{
-	ImGui::Render();
-	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-	glUseProgram(shaderProgram);
-	glBindVertexArray(VAO);
-	glDrawArrays(GL_TRIANGLES, 0, 3);
-
-	SDL_GL_SwapWindow(App->window->window);
-	return UPDATE_CONTINUE;
-}
-
-// Called before quitting
-bool ModuleRenderer3D::CleanUp()
-{
-	LOG("Destroying 3D Renderer");
-
-	SDL_GL_DeleteContext(context);
-
-	return true;
-}
-
 update_status ModuleRenderer3D::Update(float dt)
 {
 	glEnable(GL_DEPTH_TEST);
@@ -224,6 +199,28 @@ update_status ModuleRenderer3D::Update(float dt)
 	}
 
 	return UPDATE_CONTINUE;
+}
+
+update_status ModuleRenderer3D::PostUpdate(float dt)
+{
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+	glUseProgram(shaderProgram);
+	glBindVertexArray(VAO);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+
+	SDL_GL_SwapWindow(App->window->window);
+	return UPDATE_CONTINUE;
+}
+
+bool ModuleRenderer3D::CleanUp()
+{
+	LOG("Destroying 3D Renderer");
+
+	SDL_GL_DeleteContext(context);
+
+	return true;
 }
 
 void ModuleRenderer3D::OnResize(int width, int height)
