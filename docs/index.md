@@ -1,15 +1,23 @@
 <p align="center">
   <img width="417" height="91" src="https://github.com/fakefarreraspol/NormalEngine/blob/main/docs/NormalEngine_logo.png"> <br />
 
-   
-</p>
+<br>
+
 
 # Normal Engine
 Normal Engine is made by students from CITM Barcelona for a Videogames Design and Development degree subject.  <br />
 Normal Engine is a free to use Game Engine made in c++ and has the basic tools to create a game. <br />
-Engine page link: [https://fakefarreraspol.github.io/NormalEngine/](https://fakefarreraspol.github.io/NormalEngine/) 
+Engine page link: [https://fakefarreraspol.github.io/NormalEngine/](https://fakefarreraspol.github.io/NormalEngine/)
+
+<br>
+
+
 ## Usage Guide
-The engine consists of a menu bar, located in the upper part of the screen, where you can control the engine, computer and object stats. Followed with a 3D area where you are able to deploy all the objects and navigate through them. <br /> <br />
+The engine consists of a menu bar, located in the upper part of the screen, where you can control the engine, computer and object stats. Followed with a 3D area where you are able to deploy all the objects and navigate through them. <br />
+
+<br>
+
+
 ## Controls
 ~~~~~~~~~~~~~~~
 
@@ -47,9 +55,14 @@ Mouse controls:
 ~~~~~~~~~~~~~~~
 
 <br>
+
+
 ## Developers
 -Carlos Javier Arnau Montoriol [carlosarnau](https://github.com/carlosarnau) <br />
 -Pol Farreras Olivera [fakefarreraspol](https://github.com/fakefarreraspol) <br />
+
+<br>
+
 
 ## Additional Functionalities
 No additional funcionalities yet.
@@ -61,6 +74,8 @@ No additional funcionalities yet.
 No additional comments yet.
 
 <br>
+
+
 ## License
 
 MIT License <br /> <br />
