@@ -2,17 +2,19 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleRenderer3D.h"
+#include "ModuleImport.h"
+#include "ModuleGO.h"
 #include "SDL_opengl.h"
 #include <gl/GL.h>
-//#include <gl/GLU.h>
+#include <gl/GLU.h>
 
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"
 #include "imgui_impl_sdl.h"
 #include "SDL_opengl.h"
 
-/*#pragma comment (lib, "glu32.lib")    /* link OpenGL Utility lib     */
 #pragma comment (lib, "opengl32.lib") /* link Microsoft OpenGL lib   */
+#pragma comment (lib, "glew/lib/Release/Win32/glew32s.lib")
 
 
 ModuleRenderer3D::ModuleRenderer3D(Application* app, bool start_enabled) : Module(app, start_enabled)
@@ -103,7 +105,11 @@ bool ModuleRenderer3D::Init()
 		glEnable(GL_COLOR_MATERIAL);
 	}
 	GLenum error = glewInit();
-
+	if (GLEW_OK != error)
+	{
+		LOG("Glew failed, Error: %s\n", glewGetErrorString(error));
+	}
+	LOG("Glew version: %s\n", glewGetString(GLEW_VERSION));
 
 	// Projection matrix for
 	OnResize(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -135,6 +141,10 @@ update_status ModuleRenderer3D::PostUpdate(float dt)
 	ImGui::Render();
 	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
+	glUseProgram(shaderProgram);
+	glBindVertexArray(VAO);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+
 	SDL_GL_SwapWindow(App->window->window);
 	return UPDATE_CONTINUE;
 }
@@ -147,6 +157,70 @@ bool ModuleRenderer3D::CleanUp()
 	SDL_GL_DeleteContext(context);
 
 	return true;
+}
+
+update_status ModuleRenderer3D::Update(float dt)
+{
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_AMBIENT);
+
+
+	if (wireframeMode == false)
+	{
+		// Turns off wiremode
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	}
+	else if (wireframeMode == true)
+	{
+		// Turns on wiremode
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	}
+
+	if (faceCullingMode == false)
+	{
+		// Turns off wiremode
+		glDisable(GL_CULL_FACE);
+	}
+	else if (faceCullingMode == true)
+	{
+		// Turns on wiremode
+		glEnable(GL_CULL_FACE);
+	}
+
+	if (texturesOFF == false)
+	{
+		// Turns on textures
+		glEnable(GL_TEXTURE_2D);
+	}
+	else if (texturesOFF == true)
+	{
+		// Turns off textures
+		glDisable(GL_TEXTURE_2D);
+	}
+
+	if (disableLights == false)
+	{
+		// Turns on textures
+		glEnable(GL_LIGHTING);
+	}
+	else if (disableLights == true)
+	{
+		// Turns off textures
+		glDisable(GL_LIGHTING);
+	}
+
+	if (disableAO == false)
+	{
+		// Turns on textures
+		glEnable(GL_AMBIENT);
+	}
+	else if (disableAO == true)
+	{
+		// Turns off textures
+		glDisable(GL_AMBIENT);
+	}
+
+	return UPDATE_CONTINUE;
 }
 
 void ModuleRenderer3D::OnResize(int width, int height)
