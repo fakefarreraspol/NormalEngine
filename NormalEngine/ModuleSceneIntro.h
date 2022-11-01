@@ -53,6 +53,13 @@ public:
 	bool activateColorMaterial = false;
 	bool activateTexture2D = false;
 
+	const char* name;
+
+	const char* GetName()const
+	{
+		return name;
+	}
+
 private:
 	list<Primitive*> primitives;
 };
