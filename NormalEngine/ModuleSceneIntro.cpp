@@ -161,12 +161,12 @@ update_status ModuleSceneIntro::Update(float dt)
             
             if (ImGui::MenuItem("House", "CTRL+4"))
             {
-                App->importf->FileLoad("Assets/BakerHouse.fbx");
+                App->importf->LoadAll("Assets/BakerHouse.fbx", "Assets/bakeHouse.png");
             }
 
             if (ImGui::MenuItem("Train Station", "CTRL+5"))
             {
-                App->importf->FileLoad("Game\Assets\BakerHouse.fbx");
+                App->importf->LoadAll("Assets/BusStation.fbx", "Assets/lambert23_Base_Color.png");
             }
 
             ImGui::EndMenu();

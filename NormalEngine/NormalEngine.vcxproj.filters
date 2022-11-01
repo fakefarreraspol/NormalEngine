@@ -85,8 +85,16 @@
     <ClCompile Include="ModuleTextures.cpp">
       <Filter>Modules\Cpp</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="parson\parson.c">
       <Filter>External\parson</Filter>
+=======
+    <ClCompile Include="ModuleGO.cpp">
+      <Filter>Modules\Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem.cpp">
+      <Filter>Core\Cpp</Filter>
+>>>>>>> Stashed changes
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -192,8 +200,16 @@
     <ClInclude Include="ModuleTextures.h">
       <Filter>Modules\Headers</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="parson\parson.h">
       <Filter>External\parson</Filter>
+=======
+    <ClInclude Include="ModuleGO.h">
+      <Filter>Modules\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem.h">
+      <Filter>Core\Headers</Filter>
+>>>>>>> Stashed changes
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

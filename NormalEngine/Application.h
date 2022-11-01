@@ -14,6 +14,8 @@
 #include "ModuleSceneIntro.h"
 #include "SaveAndLoad.h"
 #include "ModuleImport.h"
+#include "ModuleGO.h"
+#include "FileSystem.h"
 
 using namespace std;
 
@@ -29,6 +31,8 @@ public:
 	ModuleCamera3D* camera;
 	SaveAndLoad* save_load;
 	ModuleImport* importf;
+	ModuleGO* moduleGO;
+	FileSystem* filesyst;
 
 	bool debug;
 

@@ -50,13 +50,13 @@
       <SDLCheck>false</SDLCheck>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>$(SolutionDir)NormalEngine\assimp;$(SolutionDir)NormalEngine\SDL_mixer\include;$(SolutionDir)NormalEngine\SDL\include;$(SolutionDir)NormalEngine\glew\include\GL;$(SolutionDir)NormalEngine\math\src;$(SolutionDir)NormalEngine\imgui;$(SolutionDir)NormalEngine\math\src\Algorithm;$(SolutionDir)NormalEngine\math\src\Algorithm\Random;$(SolutionDir)NormalEngine\math\src\emscripten;$(SolutionDir)NormalEngine\math\src\Geometry;$(SolutionDir)NormalEngine\math\src\Math;$(SolutionDir)NormalEngine\math\src\Time;$(SolutionDir)NormalEngine\parson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)NormalEngine\devIL\include;$(SolutionDir)NormalEngine\physFS\include;$(SolutionDir)NormalEngine\assimp;$(SolutionDir)NormalEngine\SDL_mixer\include;$(SolutionDir)NormalEngine\SDL\include;$(SolutionDir)NormalEngine\glew\include\GL;$(SolutionDir)NormalEngine\math\src;$(SolutionDir)NormalEngine\imgui;$(SolutionDir)NormalEngine\math\src\Algorithm;$(SolutionDir)NormalEngine\math\src\Algorithm\Random;$(SolutionDir)NormalEngine\math\src\emscripten;$(SolutionDir)NormalEngine\math\src\Geometry;$(SolutionDir)NormalEngine\math\src\Math;$(SolutionDir)NormalEngine\math\src\Time;$(SolutionDir)NormalEngine\parson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <AdditionalLibraryDirectories>$(SolutionDir)NormalEngine\assimp\libx86;$(SolutionDir)NormalEngine\SDL\libx86;$(SolutionDir)NormalEngine\glew\lib\Release\Win32;$(SolutionDir)NormalEngine\SDL_mixer\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)NormalEngine\physFS\libx86;$(SolutionDir)NormalEngine\devIL\libx86;$(SolutionDir)NormalEngine\assimp\libx86;$(SolutionDir)NormalEngine\SDL\libx86;$(SolutionDir)NormalEngine\glew\lib\Release\Win32;$(SolutionDir)NormalEngine\SDL_mixer\libx86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);opengl32.lib;glu32.lib;glew32.lib;SDL2.lib;assimp-vc142-mt.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -84,6 +84,7 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Color.h" />
+    <ClInclude Include="FileSystem.h" />
     <ClInclude Include="glew\include\GL\eglew.h" />
     <ClInclude Include="glew\include\GL\glew.h" />
     <ClInclude Include="glew\include\GL\glxew.h" />
@@ -106,6 +107,7 @@
     <ClInclude Include="Module.h" />
     <ClInclude Include="ModuleAudio.h" />
     <ClInclude Include="ModuleCamera3D.h" />
+    <ClInclude Include="ModuleGO.h" />
     <ClInclude Include="ModuleImport.h" />
     <ClInclude Include="ModuleInput.h" />
     <ClInclude Include="ModuleRenderer3D.h" />
@@ -121,6 +123,7 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Color.cpp" />
+    <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="glmath.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
@@ -137,6 +140,7 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="ModuleAudio.cpp" />
     <ClCompile Include="ModuleCamera3D.cpp" />
+    <ClCompile Include="ModuleGO.cpp" />
     <ClCompile Include="ModuleImport.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
     <ClCompile Include="ModuleRenderer3D.cpp" />

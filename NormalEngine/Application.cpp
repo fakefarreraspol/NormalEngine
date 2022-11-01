@@ -11,6 +11,8 @@ Application::Application() : debug(false)
 	scene_intro = new ModuleSceneIntro(this);
 	save_load = new SaveAndLoad(this);
 	importf = new ModuleImport(this);
+	moduleGO = new ModuleGO(this);
+	filesyst = new FileSystem(this);
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order
 	// They will CleanUp() in reverse order
@@ -33,6 +35,8 @@ Application::Application() : debug(false)
 
 	// Import files
 	AddModule(importf);
+	AddModule(moduleGO);
+	AddModule(filesyst);
 }
 
 Application::~Application()

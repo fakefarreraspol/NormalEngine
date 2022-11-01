@@ -149,7 +149,6 @@ bool ModuleRenderer3D::CleanUp()
 	return true;
 }
 
-
 void ModuleRenderer3D::OnResize(int width, int height)
 {
 	glViewport(0, 0, width, height);
@@ -161,4 +160,37 @@ void ModuleRenderer3D::OnResize(int width, int height)
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
+}
+
+void ModuleRenderer3D::RenderModels()
+{
+	for (int i = 0; i < App->moduleGO->objects.size(); i++)
+	{
+		for (int j = 0; j < App->moduleGO->objects[i].meshes.size(); j++)
+		{
+			// Draw elements
+			//MeshVertexData* vertexData = &App->modelImport->meshes[j];
+			MeshVertexData* vertexData = &App->moduleGO->objects[i].meshes[j];
+
+			glEnableClientState(GL_VERTEX_ARRAY);
+
+			// Render things in Element mode
+			glBindBuffer(GL_ARRAY_BUFFER, vertexData->id_vertex);
+			glVertexPointer(3, GL_FLOAT, 0, NULL);
+			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vertexData->id_index);
+
+			glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+			glBindBuffer(GL_ARRAY_BUFFER, vertexData->id_UV);
+			glTexCoordPointer(3, GL_FLOAT, 0, NULL);
+			glBindTexture(GL_TEXTURE_2D, vertexData->meshTexturesData.texture_ID);
+
+			glDrawElements(GL_TRIANGLES, vertexData->num_indices, GL_UNSIGNED_INT, NULL);
+
+			glBindTexture(GL_TEXTURE_2D, 0);
+			glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+			glDisableClientState(GL_VERTEX_ARRAY);
+		}
+	}
 }
