@@ -63,12 +63,13 @@ Mouse controls:
 <br>
 
 ## Additional Functionalities
-No additional fucnionalities yet.
+No additional funcionalities yet.
 
 <br>
 
 
 ## Additional Comments
+No additional comments yet.
 
 <br>
 
