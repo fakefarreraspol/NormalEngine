@@ -46,6 +46,20 @@ bool ModuleImport::Start()
 	stream = aiGetPredefinedLogStream(aiDefaultLogStream_DEBUGGER, nullptr);
 	aiAttachLogStream(&stream);
 
+
+	if (ilGetInteger(IL_VERSION_NUM) < IL_VERSION || ilGetInteger(ILU_VERSION_NUM) < ILU_VERSION || ilGetInteger(ILUT_VERSION_NUM) < ILUT_VERSION)
+	{
+		LOG("Error: DevIL Version does not match with lib version.");
+	}
+	else
+	{
+		LOG("Initializing DevIL");
+		ilInit();
+		iluInit();
+		ilutInit();
+		ilutRenderer(ILUT_OPENGL);
+	}
+
 	return ret;
 }
 
