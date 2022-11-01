@@ -2238,6 +2238,10 @@ JSON_Status json_object_dotset_boolean(JSON_Object *object, const char *name, in
     if (value == NULL) {
         return JSONFailure;
     }
+    /*if (object == NULL)
+    {
+        
+    }*/
     if (json_object_dotset_value(object, name, value) != JSONSuccess) {
         json_value_free(value);
         return JSONFailure;

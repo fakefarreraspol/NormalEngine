@@ -17,10 +17,11 @@ SaveAndLoad::~SaveAndLoad()
 
 bool SaveAndLoad::Init()
 {
-	LOG("Initializing ModuleSaveLoad");
+	LOG("Initializing Save and Load");
 
 	// Load Configuration.json file
-	//config = json_parse_file("Configuration.json");
+	
+	config = json_parse_file("configuration.json");
 
 	return true;
 }
@@ -49,13 +50,12 @@ update_status SaveAndLoad::PostUpdate(float dt)
 
 bool SaveAndLoad::CleanUp()
 {
-	LOG("Cleaning ModuleSaveLoad");
+	LOG("Cleaning Save and Load");
 
-	// Free file ptr
-	
+		
 	json_value_free(config);
 
-	delete config;
+	//delete config;
 
 	return true;
 }
@@ -63,9 +63,9 @@ bool SaveAndLoad::CleanUp()
 bool SaveAndLoad::Save()
 {
 	
-
-	// Aplying save to the .json file
-	json_serialize_to_file(config, "movistar");
+	App->scene_intro->SaveRequest();
+	// Saving .json file
+	json_serialize_to_file(config, "configuration.json");
 
 	return true;
 }
