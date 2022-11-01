@@ -1,5 +1,4 @@
-<p align="center">
-  ![](normalengine.jpg) <br />
+![](normalengine.jpg) <br />
 
 <br>
 
