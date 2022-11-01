@@ -142,7 +142,6 @@ update_status ModuleRenderer3D::Update(float dt)
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_AMBIENT);
 
-
 	if (wireframeMode == false)
 	{
 		// Turns off wiremode
