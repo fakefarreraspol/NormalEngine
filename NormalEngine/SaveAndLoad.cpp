@@ -73,6 +73,6 @@ bool SaveAndLoad::Save()
 bool SaveAndLoad::Load()
 {
 	
-
+	App->scene_intro->LoadRequest();
 	return true;
 }

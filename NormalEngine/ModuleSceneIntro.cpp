@@ -101,7 +101,14 @@ update_status ModuleSceneIntro::Update(float dt)
             if (ImGui::MenuItem("New Scene", "CTRL+N")) {}
             if (ImGui::MenuItem("Open Scene", "CTRL+O")) {}
             ImGui::Separator();
-            if (ImGui::MenuItem("Save", "CTRL+S")) {}
+            if (ImGui::MenuItem("Load", "CTRL+L")) 
+            {
+                App->save_load->loadTrigger = true;
+            }
+            if (ImGui::MenuItem("Save", "CTRL+S")) 
+            {
+                App->save_load->saveTrigger = true;
+            }
             if (ImGui::MenuItem("Save As", "CTRL+Shift+S")) {}
             ImGui::Separator();
             if (ImGui::MenuItem("New Project")) {}
@@ -505,6 +512,13 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 bool ModuleSceneIntro::SaveRequest()
 {
     json_object_dotset_boolean(json_object(App->save_load->config), "Fullscreen", fullscreen);
+
+    return true;
+}
+
+bool ModuleSceneIntro::LoadRequest()
+{
+    fullscreen = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "Fullscreen");
 
     return true;
 }

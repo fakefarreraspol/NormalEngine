@@ -33,6 +33,7 @@ public:
 	SDL_Window* window;
 
 	bool SaveRequest();
+	bool LoadRequest();
 	// Buttons
 	bool myToolActive = true;
 	bool myTryActive = true;
