@@ -479,11 +479,11 @@ update_status ModuleSceneIntro::Update(float dt)
 update_status ModuleSceneIntro::PostUpdate(float dt)
 {
 	//TODO 3: Nothing to do here. But it's good to know where all primitives are being rendered
-	for (uint n = 0; n < primitives.size(); n++)
+	/*for (uint n = 0; n < primitives.size(); n++)
 	{
 		primitives.rend();
-	}
-
+	}*/
+    App->renderer3D->RenderModels();
 	return UPDATE_CONTINUE;
 }
 

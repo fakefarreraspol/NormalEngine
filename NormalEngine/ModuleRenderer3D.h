@@ -1,9 +1,13 @@
-#pragma once
+#ifndef _MODULE_RENDERER_H_
+#define _MODULE_RENDERER_H_
+
 #include "Module.h"
 #include "Globals.h"
 #include "glmath.h"
 #include "Light.h"
+//#include "MathGeoLib.h"
 
+#define GLVertexDD(idx) {float3& v = vertices[*idx - 1]; glVertex3f(v.x, v.y, v.z);}
 #define MAX_LIGHTS 8
 
 
@@ -67,3 +71,5 @@ public:
 
 	unsigned int VAO;
 };
+
+#endif // !_MODULE_RENDERER_H_
