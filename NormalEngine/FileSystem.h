@@ -1,6 +1,6 @@
 #pragma once
-#ifndef _MODULE_FS_H_
-#define _MODULE_FS_H_
+#ifndef _FILE_SYSTEM_
+#define _FILE_SYSTEM_
 
 #include "Application.h"
 #include "Module.h"
@@ -26,4 +26,4 @@ public:
 
 };
 
-#endif // !_MODULE_FS_H_
+#endif // !_FILE_SYSTEM_
