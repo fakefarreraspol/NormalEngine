@@ -500,6 +500,19 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 bool ModuleSceneIntro::SaveRequest()
 {
     json_object_dotset_boolean(json_object(App->save_load->config), "Fullscreen", fullscreen);
+    json_object_dotset_boolean(json_object(App->save_load->config), "Vsync", vsync);
+    json_object_dotset_boolean(json_object(App->save_load->config), "Wireframe", boolWireframe);
+    json_object_dotset_boolean(json_object(App->save_load->config), "Resizable", checkResizable);
+
+    json_object_dotset_boolean(json_object(App->save_load->config), "Depth", activateDepthTest);
+    json_object_dotset_boolean(json_object(App->save_load->config), "CullFace", activateCullFace);
+    json_object_dotset_boolean(json_object(App->save_load->config), "Light", activateLightning);
+    json_object_dotset_boolean(json_object(App->save_load->config), "ColorMaterial", activateColorMaterial);
+    json_object_dotset_boolean(json_object(App->save_load->config), "Texture2D", activateTexture2D);
+
+    json_object_dotset_number(json_object(App->save_load->config), "Brightness", brightness);
+    json_object_dotset_number(json_object(App->save_load->config), "Width", width);
+    json_object_dotset_number(json_object(App->save_load->config), "Height", height);
 
     return true;
 }
@@ -507,6 +520,19 @@ bool ModuleSceneIntro::SaveRequest()
 bool ModuleSceneIntro::LoadRequest()
 {
     fullscreen = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "Fullscreen");
+    vsync = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "Vsync");
+    boolWireframe = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "Wireframe");
+    checkResizable = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "Resizable");
 
+    activateDepthTest = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "Depth");
+    activateCullFace = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "CullFace");
+    activateLightning = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "Light");
+    activateColorMaterial = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "ColorMaterial");
+    activateTexture2D = (bool)json_object_dotget_boolean(json_object(App->save_load->config), "Texture2D");
+    
+    brightness = (int)json_object_dotget_number(json_object(App->save_load->config), "Brightness");
+    width = (int)json_object_dotget_number(json_object(App->save_load->config), "Width");
+    height = (int)json_object_dotget_number(json_object(App->save_load->config), "Height");
+    App->window->SetWindowSize();
     return true;
 }
