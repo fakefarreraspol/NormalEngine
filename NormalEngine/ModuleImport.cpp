@@ -60,6 +60,9 @@ bool ModuleImport::Start()
 		ilutRenderer(ILUT_OPENGL);
 	}
 
+
+	App->importf->ModelLoad("Assets/BakerHouse.fbx", "Assets/bakeHouse.png");
+
 	return ret;
 }
 
