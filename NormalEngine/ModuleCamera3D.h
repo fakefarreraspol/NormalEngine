@@ -3,6 +3,8 @@
 #include "Globals.h"
 #include "glmath.h"
 
+class Transform;
+
 
 class ModuleCamera3D : public Module
 {
@@ -19,6 +21,11 @@ public:
 	void Move(const vec3 &Movement);
 	float* GetViewMatrix();
 
+	vec3 GetPosition() const
+	{
+		return transform.translation();
+	}
+
 private:
 	void CalculateViewMatrix();
 
@@ -27,4 +34,5 @@ public:
 
 private:
 	mat4x4 ViewMatrix, ViewMatrixInverse;
+	mat4x4 transform;
 };
