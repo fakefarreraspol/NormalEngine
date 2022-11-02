@@ -55,6 +55,11 @@ Import Controls:
 Mouse controls:
 - LEFT CLICK --> Selection
 
+Camera controls:
+- Movement --> Right Click + WASD and Right Click + R/F (Up/Down)
+- Movement Speed x2 --> Shift
+- Zoom --> Mouse Wheel
+- Rotate --> LeftAlt + Left Click or Only Right Click
 ~~~~~~~~~~~~~~~
 
 <br>
