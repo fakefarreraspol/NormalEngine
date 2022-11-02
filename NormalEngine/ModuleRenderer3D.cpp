@@ -211,6 +211,7 @@ update_status ModuleRenderer3D::PostUpdate(float dt)
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 
 	SDL_GL_SwapWindow(App->window->window);
+
 	return UPDATE_CONTINUE;
 }
 

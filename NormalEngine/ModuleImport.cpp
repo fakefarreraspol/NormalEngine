@@ -1,4 +1,5 @@
 #include "glew.h"
+
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleSceneIntro.h"
@@ -45,7 +46,6 @@ bool ModuleImport::Start()
 	struct aiLogStream stream;
 	stream = aiGetPredefinedLogStream(aiDefaultLogStream_DEBUGGER, nullptr);
 	aiAttachLogStream(&stream);
-
 
 	if (ilGetInteger(IL_VERSION_NUM) < IL_VERSION || ilGetInteger(ILU_VERSION_NUM) < ILU_VERSION || ilGetInteger(ILUT_VERSION_NUM) < ILUT_VERSION)
 	{
@@ -232,7 +232,6 @@ void ModuleImport::MeshLoad(const char* path)
 
 	const aiScene* scene = aiImportFile(path, aiProcessPreset_TargetRealtime_MaxQuality);
 	MeshVertexData vertexData;
-	//aiMesh* mesh = nullptr;
 
 	if (scene != nullptr && scene->HasMeshes()) //The original: if (scene != nullptr && aiScene > HasMeshes())
 	{
@@ -304,7 +303,6 @@ void ModuleImport::MeshLoad(const char* path)
 uint ModuleImport::TextureLoad(const char* path)
 {
 	GameObject newGameObject;
-
 	TextureData textureData;
 
 	textureData.texture_ID = 0;

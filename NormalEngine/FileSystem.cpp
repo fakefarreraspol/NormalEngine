@@ -16,6 +16,7 @@
 #include "cimport.h"
 #include "scene.h"
 #include "postprocess.h"
+
 #pragma comment (lib, "assimp/libx86/assimp-vc142-mt.lib")
 
 
@@ -84,7 +85,6 @@ bool FileSystem::AddPath(const char* filePath)
 	{
 		ret = true;
 	}
-
 
 	return ret;
 }
