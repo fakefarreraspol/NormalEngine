@@ -86,11 +86,6 @@ public:
 	update_status PostUpdate(float dt) override;
 	bool CleanUp();
 
-	// Drawing primitives
-	void DrawCube();
-	void DrawSphere();
-	void DrawPyramid();
-
 	// Drawing sets
 	void LoadAll(const char* meshPath, const char* texturePath);
 	void ModelLoad(const char* meshPath, const char* texturePath);
