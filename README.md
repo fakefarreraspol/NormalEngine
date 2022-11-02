@@ -56,10 +56,12 @@ Mouse controls:
 - LEFT CLICK --> Selection
 
 Camera controls:
-- Movement --> Right Click + WASD and Right Click + R/F (Up/Down)
-- Movement Speed x2 --> Shift
-- Zoom --> Mouse Wheel
-- Rotate --> LeftAlt + Left Click or Only Right Click
+- MOVEMENT --> Right Click + WASD and Right Click + R/V (Up/Down)
+- MOVEMENT SPEED x2 --> Shift
+- ZOOM --> Mouse Wheel
+- ROTATE --> LeftAlt + Left Click or Only Right Click
+- FOCUS ON OBJECT --> Right Click + F
+
 ~~~~~~~~~~~~~~~
 
 <br>
