@@ -90,9 +90,6 @@ update_status ModuleSceneIntro::Update(float dt)
     ImGui_ImplSDL2_NewFrame(App->window->window);
     ImGui::NewFrame();
 
-    // ImGui::Begin("Custom window",0, ImGuiWindowFlags_MenuBar);
-    // ImGui::ShowDemoWindow();
-
     if (ImGui::BeginMainMenuBar())
     {
         // File tab
@@ -219,9 +216,9 @@ update_status ModuleSceneIntro::Update(float dt)
 
     ImGui::Begin("Settings", nullptr, ImGuiWindowFlags_None);
 
+    // Screen settings
     if (ImGui::CollapsingHeader("Screen Settings"))
     {
-        // Configuration tab
         ImGui::Checkbox("Fullscreen", &fullscreen);
         {
             if (fullscreen == true)
@@ -268,6 +265,7 @@ update_status ModuleSceneIntro::Update(float dt)
         ImGui::Separator();
     }
 
+    // Extra settings
     if (ImGui::CollapsingHeader("Extra Settings"))
     {
         static auto i = 100;
@@ -276,6 +274,7 @@ update_status ModuleSceneIntro::Update(float dt)
         ImGui::Separator();
     }
 
+    // FPS graph
     if (ImGui::CollapsingHeader("FPS")) 
     {
         fps = App->GetMaxFPS();
@@ -289,9 +288,9 @@ update_status ModuleSceneIntro::Update(float dt)
         ImGui::Separator();
     }
 
+    // Other information
     if (ImGui::CollapsingHeader("Other Information"))
     {
-        // Information
         ImGuiIO& io = ImGui::GetIO();
         if (ImGui::TreeNode("Mouse Data"))
         {

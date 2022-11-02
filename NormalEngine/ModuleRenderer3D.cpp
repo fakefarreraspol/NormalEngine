@@ -44,15 +44,15 @@ bool ModuleRenderer3D::Init()
 	
 	if(ret == true)
 	{
-		//Use Vsync
+		// Use Vsync
 		if(VSYNC && SDL_GL_SetSwapInterval(1) < 0)
 			LOG("Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError());
 
-		//Initialize Projection Matrix
+		// Initialize Projection Matrix
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 
-		//Check for error
+		// Check for error
 		GLenum error = glGetError();
 		if(error != GL_NO_ERROR)
 		{
@@ -60,11 +60,11 @@ bool ModuleRenderer3D::Init()
 			ret = false;
 		}
 
-		//Initialize Modelview Matrix
+		// Initialize Modelview Matrix
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
 
-		//Check for error
+		// Check for error
 		error = glGetError();
 		if(error != GL_NO_ERROR)
 		{
@@ -75,10 +75,10 @@ bool ModuleRenderer3D::Init()
 		glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 		glClearDepth(1.0f);
 		
-		//Initialize clear color
+		// Initialize clear color
 		glClearColor(0.f, 0.f, 0.f, 1.f);
 
-		//Check for error
+		// Check for error
 		error = glGetError();
 		if(error != GL_NO_ERROR)
 		{
@@ -243,7 +243,6 @@ void ModuleRenderer3D::RenderModels()
 		for (int j = 0; j < App->moduleGO->objects[i].meshes.size(); j++)
 		{
 			// Draw elements
-			//MeshVertexData* vertexData = &App->modelImport->meshes[j];
 			MeshVertexData* vertexData = &App->moduleGO->objects[i].meshes[j];
 
 			glEnableClientState(GL_VERTEX_ARRAY);
