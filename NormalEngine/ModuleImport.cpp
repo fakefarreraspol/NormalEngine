@@ -63,23 +63,21 @@ bool ModuleImport::Start()
 	return ret;
 }
 
+update_status ModuleImport::Update(float dt)
+{
+	return UPDATE_CONTINUE;
+}
+
 // Called before quitting
 bool ModuleImport::CleanUp()
 {
 	// Detach log stream
 	aiDetachAllLogStreams();
 
+	LOG("Shutting down DevIL");
+	ilShutDown();
+
 	return true;
-}
-
-update_status ModuleImport::Update(float dt)
-{
-	return UPDATE_CONTINUE;
-}
-
-update_status ModuleImport::PostUpdate(float dt)
-{
-	return UPDATE_CONTINUE;
 }
 
 void ModuleImport::LoadAll(const char* meshPath, const char* texturePath)
