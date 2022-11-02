@@ -94,7 +94,6 @@ void ModuleImport::ModelLoad(const char* meshPath, const char* texturePath)
 
 	//Mesh Loading part
 	const aiScene* scene = aiImportFile(meshPath, aiProcessPreset_TargetRealtime_MaxQuality);
-	//aiMesh* mesh = nullptr;
 
 	if (scene != nullptr && scene->HasMeshes())
 	{
@@ -193,14 +192,10 @@ void ModuleImport::ModelLoad(const char* meshPath, const char* texturePath)
 
 						glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 						glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
-						//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-						//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
 						glTexImage2D(GL_TEXTURE_2D, 0, ilGetInteger(IL_IMAGE_FORMAT), ilGetInteger(IL_IMAGE_WIDTH), ilGetInteger(IL_IMAGE_HEIGHT), 0, ilGetInteger(IL_IMAGE_FORMAT), GL_UNSIGNED_BYTE, ilGetData());
 						glGenerateMipmap(GL_TEXTURE_2D);
 						glBindTexture(GL_TEXTURE_2D, 0);
-
-
 					}
 					else LOG("ERROR converting image: %s", iluErrorString(ilGetError()));
 				}
@@ -222,12 +217,8 @@ void ModuleImport::ModelLoad(const char* meshPath, const char* texturePath)
 				vertexData.meshTexturesData.height = ilGetInteger(IL_IMAGE_HEIGHT);
 			}
 			newGameObject.meshes.push_back(vertexData);
-			//textures.push_back(textureData);
-			//meshes.push_back(vertexData);
 		}
-
 		newGameObject.textures.push_back(textureData);
-
 		App->moduleGO->objects.push_back(newGameObject);
 		aiReleaseImport(scene);
 	}
@@ -344,20 +335,6 @@ uint ModuleImport::TextureLoad(const char* path)
 
 				glTexImage2D(GL_TEXTURE_2D, 0, ilGetInteger(IL_IMAGE_FORMAT), ilGetInteger(IL_IMAGE_WIDTH), ilGetInteger(IL_IMAGE_HEIGHT), 0, ilGetInteger(IL_IMAGE_FORMAT), GL_UNSIGNED_BYTE, ilGetData());
 				glGenerateMipmap(GL_TEXTURE_2D);
-
-				//glBindTexture(GL_TEXTURE_2D, 0);
-
-				//The original:
-				/*glGenTextures(1, (GLuint*)&textureID);
-				glBindTexture(GL_TEXTURE_2D, textureID);
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-				glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, internalFormat, GL_UNSIGNED_BYTE, texture);
-				glGenerateMipmap(GL_TEXTURE_2D);
-				glBindTexture(GL_TEXTURE_2D, 0);*/
-
 			}
 			else LOG("ERROR converting image: %s", iluErrorString(ilGetError()));
 		}
@@ -406,19 +383,4 @@ uint ModuleImport::TextureChecker()
 	glBindTexture(GL_TEXTURE_2D, 0);
 
 	return textureID;
-}
-
-void ModuleImport::DrawCube()
-{
-
-}
-
-void ModuleImport::DrawSphere()
-{
-
-}
-
-void ModuleImport::DrawPyramid()
-{
-
 }

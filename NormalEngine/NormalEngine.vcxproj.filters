@@ -58,9 +58,6 @@
     <ClCompile Include="ModuleSceneIntro.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleTextures.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleWindow.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -163,9 +160,6 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="ModuleSceneIntro.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleTextures.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="ModuleWindow.h">

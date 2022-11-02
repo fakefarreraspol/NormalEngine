@@ -466,31 +466,19 @@ update_status ModuleSceneIntro::Update(float dt)
         ImGui::End();
     }
 
-
-    //save
+    // Save
     if (App->input->GetKey(SDL_SCANCODE_Z) == KEY_DOWN)
     {
         App->save_load->saveTrigger = true;
     }
-        
-        
-
-
-
-    /*const char* filepath = ("Assets\BakerHouse.fbx");
-    App->importf->FileLoad(filepath);*/
 
 	return UPDATE_CONTINUE;
 }
 
 update_status ModuleSceneIntro::PostUpdate(float dt)
 {
-	//TODO 3: Nothing to do here. But it's good to know where all primitives are being rendered
-	/*for (uint n = 0; n < primitives.size(); n++)
-	{
-		primitives.rend();
-	}*/
     App->renderer3D->RenderModels();
+
 	return UPDATE_CONTINUE;
 }
 
