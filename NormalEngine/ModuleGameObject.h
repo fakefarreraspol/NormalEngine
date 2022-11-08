@@ -1,5 +1,5 @@
-#ifndef _GAME_OBJECT_H_
-#define _GAME_OBJECT_H_
+#ifndef _GO_H_
+#define _GO_H_
 
 #include "Application.h"
 #include "Module.h"
@@ -33,4 +33,4 @@ public:
 
 };
 
-#endif // !_GAME_OBJECT
+#endif // !_GO
