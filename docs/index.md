@@ -88,7 +88,7 @@ No additional comments yet.
 
 MIT License <br /> <br />
 
-Copyright (c) 2022 ª̵̢̳̯̹̗̘̮̈́̽̽̂̽̿̃̔̈́̔͠ª̵̢̳̯̹̗̘̮̈́̽̽̂̽̿̃̔̈́̔͠ª̵̢̳̯̹̗̘̮̈́̽̽̂̽̿̃̔̈́̔͠    <br /> <br />
+Copyright (c) 2022 Pol <br /> <br />
 
 Permission is hereby granted, free of charge, to any person obtaining a copy <br />
 of this software and associated documentation files (the "Software"), to deal <br />
