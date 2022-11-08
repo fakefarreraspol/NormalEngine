@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Application.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Color.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="glmath.cpp">
       <Filter>External</Filter>
     </ClCompile>
@@ -37,65 +31,65 @@
     <ClCompile Include="imgui\imgui_stdlib.cpp">
       <Filter>External</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleAudio.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleCamera3D.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleGO.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleImport.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleInput.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleRenderer3D.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleSceneIntro.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleWindow.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="SaveAndLoad.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="FileSystem.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="parson\parson.c">
       <Filter>External</Filter>
     </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Core\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Core\Source</Filter>
+    </ClCompile>
     <ClCompile Include="Light.cpp">
-      <Filter>Core</Filter>
+      <Filter>Core\Source</Filter>
     </ClCompile>
     <ClCompile Include="log.cpp">
-      <Filter>Core</Filter>
+      <Filter>Core\Source</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>Core</Filter>
+      <Filter>Core\Source</Filter>
     </ClCompile>
     <ClCompile Include="Primitive.cpp">
-      <Filter>Core</Filter>
+      <Filter>Core\Source</Filter>
     </ClCompile>
     <ClCompile Include="PTimer.cpp">
-      <Filter>Core</Filter>
+      <Filter>Core\Source</Filter>
     </ClCompile>
     <ClCompile Include="Timer.cpp">
-      <Filter>Core</Filter>
+      <Filter>Core\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem.cpp">
+      <Filter>Modules\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleAudio.cpp">
+      <Filter>Modules\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleCamera3D.cpp">
+      <Filter>Modules\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleGameObject.cpp">
+      <Filter>Modules\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleImport.cpp">
+      <Filter>Modules\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleInput.cpp">
+      <Filter>Modules\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleRenderer3D.cpp">
+      <Filter>Modules\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleSceneIntro.cpp">
+      <Filter>Modules\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleWindow.cpp">
+      <Filter>Modules\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveAndLoad.cpp">
+      <Filter>Modules\Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Color.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="glew\include\GL\eglew.h">
       <Filter>External</Filter>
     </ClInclude>
@@ -141,59 +135,65 @@
     <ClInclude Include="imgui\imgui_internal.h">
       <Filter>External</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleAudio.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleCamera3D.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleGO.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleImport.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleInput.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleRenderer3D.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleSceneIntro.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleWindow.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="SaveAndLoad.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="FileSystem.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Module.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
     <ClInclude Include="parson\parson.h">
       <Filter>External</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Globals.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Light.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Primitive.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="PTimer.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="glew\include\GL\wglew.h">
       <Filter>External</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Core\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Core\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>Core\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Core\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Primitive.h">
+      <Filter>Core\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PTimer.h">
+      <Filter>Core\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Core\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Module.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleAudio.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleCamera3D.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleGameObject.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleImport.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleInput.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleRenderer3D.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleSceneIntro.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleWindow.h">
+      <Filter>Modules\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveAndLoad.h">
+      <Filter>Modules\Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +205,18 @@
     </Filter>
     <Filter Include="Modules">
       <UniqueIdentifier>{38fdc9c5-c515-4bbd-a10c-6729f2a899ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Source">
+      <UniqueIdentifier>{5f395d56-4a08-4cc6-bc69-1bc94244d7ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Header">
+      <UniqueIdentifier>{6a2ccc0d-8ded-43a7-af75-b9312474b6e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Source">
+      <UniqueIdentifier>{b0bddaff-c630-46f4-a2ae-f9a4a43f458e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Header">
+      <UniqueIdentifier>{be76b079-85d4-4117-9709-c14bd1640399}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

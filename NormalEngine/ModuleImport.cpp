@@ -5,7 +5,7 @@
 #include "ModuleSceneIntro.h"
 #include "ModuleRenderer3D.h"
 #include "ModuleImport.h"
-#include "ModuleGO.h"
+#include "ModuleGameObject.h"
 
 #include "SDL_opengl.h"
 
@@ -220,7 +220,7 @@ void ModuleImport::ModelLoad(const char* meshPath, const char* texturePath)
 			newGameObject.meshes.push_back(vertexData);
 		}
 		newGameObject.textures.push_back(textureData);
-		App->moduleGO->objects.push_back(newGameObject);
+		App->modulego->objects.push_back(newGameObject);
 		aiReleaseImport(scene);
 	}
 	else
@@ -293,7 +293,7 @@ void ModuleImport::MeshLoad(const char* path)
 			//meshes.push_back(vertexData);
 		}
 
-		App->moduleGO->objects.push_back(newGameObject);
+		App->modulego->objects.push_back(newGameObject);
 		aiReleaseImport(scene);
 	}
 	else
@@ -345,7 +345,7 @@ uint ModuleImport::TextureLoad(const char* path)
 	newGameObject.textures.push_back(textureData);
 	//textures.push_back(textureData);
 
-	App->moduleGO->objects.push_back(newGameObject);
+	App->modulego->objects.push_back(newGameObject);
 
 	return textureData.texture_ID;
 }

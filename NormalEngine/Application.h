@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream>
 #include <list>
 #include "Globals.h"
@@ -14,7 +13,7 @@
 #include "ModuleSceneIntro.h"
 #include "SaveAndLoad.h"
 #include "ModuleImport.h"
-#include "ModuleGO.h"
+#include "ModuleGameObject.h"
 #include "FileSystem.h"
 
 using namespace std;
@@ -31,7 +30,7 @@ public:
 	ModuleCamera3D* camera;
 	SaveAndLoad* save_load;
 	ModuleImport* importf;
-	ModuleGO* moduleGO;
+	ModuleGameObject* modulego;
 	FileSystem* filesyst;
 
 	bool debug;

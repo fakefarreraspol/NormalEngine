@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 struct GameObject
 {
 	uint objectID;
@@ -19,11 +18,11 @@ struct GameObject
 };
 
 
-class ModuleGO : public Module
+class ModuleGameObject : public Module
 {
 public:
-	ModuleGO(Application* app, bool start_enabled = true);
-	~ModuleGO();
+	ModuleGameObject(Application* app, bool start_enabled = true);
+	~ModuleGameObject();
 
 	bool Init();
 	update_status Update(float dt);

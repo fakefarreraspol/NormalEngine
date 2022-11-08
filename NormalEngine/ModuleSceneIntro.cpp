@@ -414,6 +414,30 @@ update_status ModuleSceneIntro::Update(float dt)
 
     ImGui::End();
 
+    ImGui::Begin("Object Properties", nullptr, ImGuiWindowFlags_None);
+
+    if (ImGui::CollapsingHeader("Transformation"))
+    {
+
+    }
+
+    if (ImGui::CollapsingHeader("Mesh"))
+    {
+
+    }
+
+    if (ImGui::CollapsingHeader("Material"))
+    {
+
+    }
+
+    if (ImGui::CollapsingHeader("Light"))
+    {
+
+    }
+
+    ImGui::End();
+
     if (activateAbout == true)
     {
         ImGui::Begin("About", 0, ImGuiWindowFlags_MenuBar);

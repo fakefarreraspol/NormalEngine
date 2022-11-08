@@ -4,7 +4,7 @@
 #include "Application.h"
 #include "ModuleRenderer3D.h"
 #include "ModuleImport.h"
-#include "ModuleGO.h"
+#include "ModuleGameObject.h"
 #include "SDL_opengl.h"
 #include <gl/GL.h>
 #include <gl/GLU.h>
@@ -239,12 +239,12 @@ void ModuleRenderer3D::OnResize(int width, int height)
 
 void ModuleRenderer3D::RenderModels()
 {
-	for (int i = 0; i < App->moduleGO->objects.size(); i++)
+	for (int i = 0; i < App->modulego->objects.size(); i++)
 	{
-		for (int j = 0; j < App->moduleGO->objects[i].meshes.size(); j++)
+		for (int j = 0; j < App->modulego->objects[i].meshes.size(); j++)
 		{
 			// Draw elements
-			MeshVertexData* vertexData = &App->moduleGO->objects[i].meshes[j];
+			MeshVertexData* vertexData = &App->modulego->objects[i].meshes[j];
 
 			glEnableClientState(GL_VERTEX_ARRAY);
 
